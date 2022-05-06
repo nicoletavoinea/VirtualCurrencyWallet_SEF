@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class Register {
+public class Register_User {
     @FXML
     Label label_InvalidAge;
     @FXML
@@ -31,7 +31,7 @@ public class Register {
     @FXML
     Button button_Back;
 
-    public Register(){}
+    public Register_User(){}
 
     @FXML
     public void register(ActionEvent event) throws Exception{
