@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.virtualcurrencywallet_sef.ExchangeCurrency"
-            prefHeight="700.0" prefWidth="900.0">
-
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.ExchangeCurrency">
+   <children>
+      <Button fx:id="button_back" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="113.0" fitWidth="102.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Wallet.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="124.0" layoutY="39.0" prefHeight="52.0" prefWidth="112.0" text="Virtual" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="59.0" prefHeight="52.0" prefWidth="144.0" text="Currency" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="85.0" prefHeight="52.0" prefWidth="102.0" text="Wallet" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="421.0" text="exchange    currency" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="34.0" />
+         </font>
+      </Label>
+      <TextField fx:id="field_sum" layoutX="394.0" layoutY="325.0" prefHeight="25.0" prefWidth="112.0" promptText="Enter sum" />
+      <Label layoutX="341.0" layoutY="318.0" prefHeight="39.0" prefWidth="53.0" text="Sum:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="513.0" layoutY="318.0" prefHeight="39.0" prefWidth="53.0" text="€" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choice_from" layoutX="235.0" layoutY="259.0" prefWidth="150.0" />
+      <Label layoutX="238.0" layoutY="220.0" prefHeight="39.0" prefWidth="53.0" text="From:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choice_to" layoutX="501.0" layoutY="259.0" prefWidth="150.0" />
+      <Label layoutX="501.0" layoutY="220.0" prefHeight="39.0" prefWidth="53.0" text="To:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_preview" layoutX="238.0" layoutY="357.0" prefHeight="39.0" prefWidth="414.0" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_exchange" layoutX="363.0" layoutY="420.0" mnemonicParsing="false" onAction="#exchange" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Exchange" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="label_successful" layoutX="322.0" layoutY="482.0" prefHeight="25.0" prefWidth="257.0" textAlignment="CENTER" textFill="#1eba27">
+         <font>
+            <Font name="Century Gothic Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

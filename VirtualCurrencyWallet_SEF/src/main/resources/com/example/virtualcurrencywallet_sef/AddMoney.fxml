@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.AddMoney">
    <children>
-      <Button fx:id="button_logout" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
+      <Button fx:id="button_back" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -69,10 +69,15 @@
             <Font name="Century Gothic Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="label_successful" layoutX="615.0" layoutY="395.0" prefHeight="25.0" prefWidth="257.0" textFill="#1eba27">
+      <Label fx:id="label_successful" contentDisplay="CENTER" layoutX="328.0" layoutY="473.0" prefHeight="25.0" prefWidth="245.0" textFill="#1eba27">
          <font>
             <Font name="Century Gothic Bold" size="15.0" />
          </font>
       </Label>
+      <Button fx:id="button_add" layoutX="336.0" layoutY="420.0" mnemonicParsing="false" onAction="#add" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Add" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

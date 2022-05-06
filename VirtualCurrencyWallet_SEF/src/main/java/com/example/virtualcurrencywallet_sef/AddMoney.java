@@ -21,10 +21,18 @@ public class AddMoney {
     private TextField field_pin;
     @FXML
     private Button button_back;
+    @FXML
+    private Button button_add;
 
     @FXML
     private void back(ActionEvent event) throws IOException {
         Main m=new Main();
         m.changeScene("Menu.fxml");
+    }
+
+    @FXML
+    private void add(ActionEvent event){
+        //code
+        label_successful.setText("Money added successfully");
     }
 }
