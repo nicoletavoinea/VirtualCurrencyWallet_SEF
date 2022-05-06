@@ -20,6 +20,8 @@ public class LogIn {
     private TextField field_username;
     @FXML
     private PasswordField field_password;
+    @FXML
+    private Button button_RegisterAdmin;
 
     public LogIn(){
     }
@@ -33,8 +35,13 @@ public class LogIn {
     @FXML
     private void toRegisterPage(ActionEvent event) throws IOException {
         Main m=new Main();
-        m.changeScene("Register.fxml");
+        m.changeScene("Register_User.fxml");
     }
 
+    @FXML
+    private void register_admin(ActionEvent event)throws IOException{
+        Main m=new Main();
+        m.changeScene("Register_Admin.fxml");
+    }
 
 }
