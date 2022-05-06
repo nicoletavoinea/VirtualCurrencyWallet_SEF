@@ -1,1 +1,0 @@
-# VirtualCurrencyWallet_SEF
