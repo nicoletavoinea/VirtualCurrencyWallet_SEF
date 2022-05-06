@@ -9,7 +9,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.Register_User">
    <children>
       <ImageView fitHeight="165.0" fitWidth="161.0" layoutX="78.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
@@ -87,14 +86,14 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="field_PhoneNumber" layoutX="600.0" layoutY="307.0" prefHeight="24.0" prefWidth="257.0" />
-      <TextField fx:id="field_HomeAdress" layoutX="600.0" layoutY="362.0" prefHeight="24.0" prefWidth="257.0" />
-      <TextField fx:id="field_ID" layoutX="600.0" layoutY="257.0" prefHeight="24.0" prefWidth="257.0" />
-      <TextField fx:id="field_FullName" layoutX="600.0" layoutY="207.0" prefHeight="24.0" prefWidth="257.0" />
-      <TextField fx:id="field_CardNumber" layoutX="600.0" layoutY="412.0" prefHeight="24.0" prefWidth="257.0" />
-      <TextField fx:id="field_Username" layoutX="600.0" layoutY="512.0" prefHeight="24.0" prefWidth="257.0" />
-      <PasswordField fx:id="field_PIN" layoutX="600.0" layoutY="461.0" prefHeight="25.0" prefWidth="257.0" />
-      <PasswordField fx:id="field_Password" layoutX="600.0" layoutY="563.0" prefHeight="25.0" prefWidth="257.0" />
+      <TextField fx:id="field_PhoneNumber" layoutX="600.0" layoutY="307.0" prefHeight="24.0" prefWidth="257.0" promptText="Your phone number" />
+      <TextField fx:id="field_HomeAdress" layoutX="600.0" layoutY="362.0" prefHeight="24.0" prefWidth="257.0" promptText="Your home adress" />
+      <TextField fx:id="field_ID" layoutX="600.0" layoutY="257.0" prefHeight="24.0" prefWidth="257.0" promptText="Your personal ID" />
+      <TextField fx:id="field_FullName" layoutX="600.0" layoutY="207.0" prefHeight="24.0" prefWidth="257.0" promptText="Your full name" />
+      <TextField fx:id="field_CardNumber" layoutX="600.0" layoutY="412.0" prefHeight="24.0" prefWidth="257.0" promptText="Your card number" />
+      <TextField fx:id="field_Username" layoutX="600.0" layoutY="512.0" prefHeight="24.0" prefWidth="257.0" promptText="Username" />
+      <PasswordField fx:id="field_PIN" layoutX="600.0" layoutY="461.0" prefHeight="25.0" prefWidth="257.0" promptText="Your PIN" />
+      <PasswordField fx:id="field_Password" layoutX="600.0" layoutY="563.0" prefHeight="25.0" prefWidth="257.0" promptText="Password" />
       <Button fx:id="button_Register" layoutX="682.0" layoutY="626.0" mnemonicParsing="false" onAction="#register" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register" textFill="WHITE">
          <font>
             <Font size="18.0" />

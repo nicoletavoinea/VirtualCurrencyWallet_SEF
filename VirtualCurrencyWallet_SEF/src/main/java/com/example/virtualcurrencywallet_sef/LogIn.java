@@ -29,7 +29,7 @@ public class LogIn {
     @FXML
     private void login(ActionEvent event) throws IOException {
         Main m=new Main();
-        m.changeScene("Menu.fxml");
+        m.changeScene("Menu_User.fxml");
     }
 
     @FXML

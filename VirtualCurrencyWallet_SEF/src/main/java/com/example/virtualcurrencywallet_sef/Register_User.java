@@ -36,7 +36,7 @@ public class Register_User {
     @FXML
     public void register(ActionEvent event) throws Exception{
         Main m= new Main();
-        m.changeScene("Menu.fxml");
+        m.changeScene("Menu_User.fxml");
     }
 
     @FXML

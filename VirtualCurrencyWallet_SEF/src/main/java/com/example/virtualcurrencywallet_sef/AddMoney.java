@@ -25,6 +25,6 @@ public class AddMoney {
     @FXML
     private void back(ActionEvent event) throws IOException {
         Main m=new Main();
-        m.changeScene("Menu.fxml");
+        m.changeScene("Menu_User.fxml");
     }
 }
