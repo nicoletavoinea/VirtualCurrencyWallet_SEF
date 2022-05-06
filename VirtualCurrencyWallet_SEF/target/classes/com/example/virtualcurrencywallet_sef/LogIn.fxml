@@ -48,11 +48,6 @@
             <Font name="Century Gothic Bold" size="30.0" />
          </font>
       </Label>
-      <Button fx:id="button_register" layoutX="562.0" layoutY="553.0" mnemonicParsing="false" onAction="#toRegisterPage" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
       <Label graphicTextGap="0.0" layoutX="595.0" layoutY="85.0" prefHeight="88.0" prefWidth="135.0" text="Log In" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
@@ -73,5 +68,10 @@
             <Font name="Century Gothic Bold" size="15.0" />
          </font>
       </Label>
+      <Button fx:id="button_register" layoutX="562.0" layoutY="542.0" mnemonicParsing="false" onAction="#toRegisterPage" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

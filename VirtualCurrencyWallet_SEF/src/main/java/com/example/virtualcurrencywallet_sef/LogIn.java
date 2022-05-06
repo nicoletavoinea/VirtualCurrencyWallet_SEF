@@ -21,9 +21,20 @@ public class LogIn {
     @FXML
     private PasswordField field_password;
 
+    public LogIn(){
+    }
+
+    @FXML
     private void login(ActionEvent event) throws IOException {
         Main m=new Main();
-        m.changeScene("menu.fxml");
-
+        m.changeScene("Menu.fxml");
     }
+
+    @FXML
+    private void toRegisterPage(ActionEvent event) throws IOException {
+        Main m=new Main();
+        m.changeScene("Register.fxml");
+    }
+
+
 }
