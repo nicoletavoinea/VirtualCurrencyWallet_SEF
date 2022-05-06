@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.virtualcurrencywallet_sef.Menu"
-            prefHeight="700.0" prefWidth="900.0">
-
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.Menu">
+   <children>
+      <Button fx:id="button_logout" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#logout" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Log Out" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="113.0" fitWidth="102.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Wallet.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="124.0" layoutY="39.0" prefHeight="52.0" prefWidth="112.0" text="Virtual" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="59.0" prefHeight="52.0" prefWidth="144.0" text="Currency" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="85.0" prefHeight="52.0" prefWidth="102.0" text="Wallet" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="349.0" text="welcome,   *name*" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="34.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="99.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/add.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="374.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/exchange.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="673.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/transfer.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="button_addmoney" alignment="BOTTOM_CENTER" layoutX="99.0" layoutY="281.0" mnemonicParsing="false" onAction="#addMoney" prefHeight="188.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Add money" textAlignment="CENTER" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_exchange" alignment="BOTTOM_CENTER" layoutX="375.0" layoutY="281.0" mnemonicParsing="false" onAction="#exchangeCurrency" prefHeight="213.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Exchange Currency" textAlignment="CENTER" textFill="#141878" wrapText="true">
+         <font>
+            <Font name="Century Gothic Bold" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_transfer" alignment="BOTTOM_CENTER" layoutX="673.0" layoutY="281.0" mnemonicParsing="false" onAction="#transfer" prefHeight="188.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Transfer" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="20.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>
