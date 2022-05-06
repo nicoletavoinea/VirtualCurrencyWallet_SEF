@@ -58,7 +58,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Label layoutX="536.0" layoutY="494.0" prefHeight="59.0" prefWidth="227.0" text="don't have an account?" textFill="#141878">
+      <Label layoutX="543.0" layoutY="483.0" prefHeight="59.0" prefWidth="214.0" text="don't have an account?" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
@@ -69,6 +69,11 @@
          </font>
       </Label>
       <Button fx:id="button_register" layoutX="562.0" layoutY="542.0" mnemonicParsing="false" onAction="#toRegisterPage" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_RegisterAdmin" layoutX="562.0" layoutY="604.0" mnemonicParsing="false" onAction="#register_admin" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register Admin" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
