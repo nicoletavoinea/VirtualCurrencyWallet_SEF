@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.virtualcurrencywallet_sef/com.example.virtualcurrencywallet_sef.HelloApplication
+                                com.example.virtualcurrencywallet_sef/com.example.virtualcurrencywallet_sef.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

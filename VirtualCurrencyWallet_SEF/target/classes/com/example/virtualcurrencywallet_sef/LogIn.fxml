@@ -9,21 +9,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.LogIn">
    <children>
       <Label layoutX="514.0" layoutY="214.0" prefHeight="59.0" prefWidth="135.0" text="Username" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="637.0" layoutY="226.0" prefHeight="36.0" prefWidth="175.0" />
+      <TextField fx:id="field_username" layoutX="637.0" layoutY="226.0" prefHeight="36.0" prefWidth="175.0" promptText="Username" />
       <Label layoutX="514.0" layoutY="299.0" prefHeight="59.0" prefWidth="135.0" text="Password" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <PasswordField layoutX="637.0" layoutY="311.0" prefHeight="36.0" prefWidth="175.0" />
+      <PasswordField fx:id="field_password" layoutX="637.0" layoutY="311.0" prefHeight="36.0" prefWidth="175.0" promptText="Password" />
       <ImageView fitHeight="165.0" fitWidth="161.0" layoutX="74.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/Wallet.png" />
@@ -49,7 +48,7 @@
             <Font name="Century Gothic Bold" size="30.0" />
          </font>
       </Label>
-      <Button layoutX="562.0" layoutY="553.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register" textFill="WHITE">
+      <Button fx:id="button_register" layoutX="562.0" layoutY="553.0" mnemonicParsing="false" onAction="#toRegisterPage" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -59,7 +58,7 @@
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
       </Label>
-      <Button layoutX="562.0" layoutY="405.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Log In" textFill="WHITE">
+      <Button fx:id="button_login" layoutX="562.0" layoutY="405.0" mnemonicParsing="false" onAction="#login" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Log In" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
@@ -69,7 +68,7 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="637.0" layoutY="189.0" prefHeight="36.0" prefWidth="175.0" textFill="#8a1919">
+      <Label fx:id="label_loginerror" layoutX="637.0" layoutY="189.0" prefHeight="36.0" prefWidth="175.0" textFill="#8a1919">
          <font>
             <Font name="Century Gothic Bold" size="15.0" />
          </font>
