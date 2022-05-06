@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 
-public class Menu {
+public class Menu_User {
 
     @FXML
     private Button button_logout;
@@ -20,7 +20,7 @@ public class Menu {
     @FXML
     private Label label_welcome;
 
-    public Menu(){
+    public Menu_User(){
     }
 
     @FXML

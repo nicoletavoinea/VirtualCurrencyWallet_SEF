@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.Menu">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.Menu_Admin">
    <children>
       <Button fx:id="button_logout" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#logout" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Log Out" textFill="WHITE">
          <font>
@@ -39,32 +39,42 @@
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="99.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="138.0" fitWidth="144.0" layoutX="254.0" layoutY="142.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/add.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="374.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="148.0" fitWidth="150.0" layoutX="511.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Images/exchange.png" />
+            <Image url="@Images/modify_exchange_rate.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="673.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="144.0" layoutX="256.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Images/transfer.png" />
+            <Image url="@Images/commission-discounts.png" />
          </image>
       </ImageView>
-      <Button fx:id="button_addmoney" alignment="BOTTOM_CENTER" layoutX="99.0" layoutY="281.0" mnemonicParsing="false" onAction="#addMoney" prefHeight="188.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Add money" textAlignment="CENTER" textFill="#141878">
+      <Button fx:id="button_ModifyCommission" alignment="BOTTOM_CENTER" layoutX="246.0" layoutY="417.0" mnemonicParsing="false" onAction="#modifyCommission" prefHeight="194.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="Modify Commission" textAlignment="CENTER" textFill="#141878" wrapText="true">
          <font>
             <Font name="Century Gothic Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="button_exchange" alignment="BOTTOM_CENTER" layoutX="375.0" layoutY="281.0" mnemonicParsing="false" onAction="#exchangeCurrency" prefHeight="213.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Exchange Currency" textAlignment="CENTER" textFill="#141878" wrapText="true">
+      <Button fx:id="button_AddNewCurrency" alignment="BOTTOM_CENTER" layoutX="241.0" layoutY="142.0" mnemonicParsing="false" onAction="#addNewCurrency" prefHeight="200.0" prefWidth="164.0" style="-fx-background-color: transparent;" text="Add New Currency" textAlignment="CENTER" textFill="#141878" wrapText="true">
          <font>
             <Font name="Century Gothic Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="button_transfer" alignment="BOTTOM_CENTER" layoutX="673.0" layoutY="281.0" mnemonicParsing="false" onAction="#transfer" prefHeight="188.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Transfer" textFill="#141878">
+      <Button fx:id="button_ModifyExchangeRate" alignment="BOTTOM_CENTER" layoutX="510.0" layoutY="142.0" mnemonicParsing="false" onAction="#modifyExchangeRate" prefHeight="227.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Modify Exchange Rate" textAlignment="CENTER" textFill="#141878" wrapText="true">
+         <font>
+            <Font name="Century Gothic Bold" size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="138.0" fitWidth="138.0" layoutX="516.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/display_users.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="button_DisplayUsers" alignment="BOTTOM_CENTER" layoutX="510.0" layoutY="402.0" mnemonicParsing="false" onAction="#displayUsers" prefHeight="215.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Display Users" textAlignment="CENTER" textFill="#141878" wrapText="true">
          <font>
             <Font name="Century Gothic Bold" size="20.0" />
          </font>

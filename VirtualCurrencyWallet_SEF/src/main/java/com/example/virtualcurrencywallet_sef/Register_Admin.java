@@ -32,7 +32,7 @@ public class Register_Admin {
     @FXML
     public void register(ActionEvent event) throws Exception{
         Main m= new Main();
-        m.changeScene("Menu.fxml");
+        m.changeScene("Menu_Admin.fxml");
     }
 
     @FXML
