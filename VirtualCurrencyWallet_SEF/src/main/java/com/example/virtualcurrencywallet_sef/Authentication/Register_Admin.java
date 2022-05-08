@@ -1,5 +1,6 @@
-package com.example.virtualcurrencywallet_sef;
+package com.example.virtualcurrencywallet_sef.Authentication;
 
+import com.example.virtualcurrencywallet_sef.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -7,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class Register_User {
+public class Register_Admin {
     @FXML
     Label label_InvalidAge;
     @FXML
@@ -17,26 +18,22 @@ public class Register_User {
     @FXML
     TextField field_PhoneNumber;
     @FXML
-    TextField field_HomeAdress;
-    @FXML
-    TextField field_CardNumber;
-    @FXML
-    PasswordField field_PIN;
-    @FXML
     TextField field_Username;
     @FXML
     PasswordField field_Password;
+    @FXML
+    PasswordField field_AdminPIN;
     @FXML
     Button button_Register;
     @FXML
     Button button_Back;
 
-    public Register_User(){}
+    public Register_Admin(){}
 
     @FXML
     public void register(ActionEvent event) throws Exception{
         Main m= new Main();
-        m.changeScene("Menu_User.fxml");
+        m.changeScene("Menu_Admin.fxml");
     }
 
     @FXML

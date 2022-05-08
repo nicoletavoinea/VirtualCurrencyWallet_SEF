@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.Menu_User">
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.UserFunctions.Menu_User">
    <children>
       <Button fx:id="button_logout" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#logout" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Log Out" textFill="WHITE">
          <font>

@@ -1,5 +1,6 @@
-package com.example.virtualcurrencywallet_sef;
+package com.example.virtualcurrencywallet_sef.AdministratorFunctions;
 
+import com.example.virtualcurrencywallet_sef.Main;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

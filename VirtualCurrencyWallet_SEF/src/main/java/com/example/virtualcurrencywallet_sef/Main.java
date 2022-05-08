@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage primarystage) throws Exception {
         stg=primarystage;
         primarystage.setResizable(false);
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Login.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LogIn.fxml")));
         primarystage.setTitle("Virtual Currency Wallet");
         primarystage.setScene(new Scene(root, 900,700));
         primarystage.show();
