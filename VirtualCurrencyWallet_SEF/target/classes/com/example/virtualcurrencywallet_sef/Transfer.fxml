@@ -51,8 +51,8 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="field_FullName" layoutX="252.0" layoutY="265.0" prefHeight="25.0" prefWidth="186.0" />
-      <TextField fx:id="field_PID" layoutX="252.0" layoutY="318.0" prefHeight="25.0" prefWidth="186.0" />
+      <TextField fx:id="field_FullName" layoutX="252.0" layoutY="265.0" prefHeight="25.0" prefWidth="186.0" promptText="name" />
+      <TextField fx:id="field_PID" layoutX="252.0" layoutY="318.0" prefHeight="25.0" prefWidth="186.0" promptText="PID" />
       <Label layoutX="480.0" layoutY="258.0" prefHeight="39.0" prefWidth="96.0" text="Currency:" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
@@ -64,7 +64,7 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="field_Amount" layoutX="633.0" layoutY="318.0" prefHeight="25.0" prefWidth="186.0" />
+      <TextField fx:id="field_Amount" layoutX="633.0" layoutY="318.0" prefHeight="25.0" prefWidth="186.0" promptText="amount" />
       <Button fx:id="button_Transfer" layoutX="363.0" layoutY="422.0" mnemonicParsing="false" onAction="#transfer" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Transfer" textFill="WHITE">
          <font>
             <Font size="18.0" />
