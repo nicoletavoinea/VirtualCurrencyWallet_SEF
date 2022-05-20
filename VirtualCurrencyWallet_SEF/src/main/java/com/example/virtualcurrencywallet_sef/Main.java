@@ -1,19 +1,43 @@
 package com.example.virtualcurrencywallet_sef;
 
+import com.example.virtualcurrencywallet_sef.Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Main extends Application {
     private static Stage stg;
 
     @Override
     public void start(Stage primarystage) throws Exception {
+        /*User user=new User("fn","id","pn","adr","cn","pin","un","pw");
+        User user2=new User("fn2","id2","pn2","adr2","cn2","pin2","un2","pw2");
+        FileWriter fw=new FileWriter("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json",true);
+        fw.write(user.userJSON().toJSONString()+"\n");
+        fw.write(user2.userJSON().toJSONString()+"\n");
+        fw.flush();
+        fw.close();*/
+
+        /*JSONParser jp=new JSONParser();
+        FileReader fr=new FileReader("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+        Scanner sc=new Scanner(fr);
+        Object obj=jp.parse(fr);
+        JSONArray jobj=(JSONArray) obj;
+        JSONObject user1=(JSONObject) jobj.get(0);
+        System.out.println( (String) user1.get("username"));*/
+
+
         stg=primarystage;
         primarystage.setResizable(false);
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LogIn.fxml")));
