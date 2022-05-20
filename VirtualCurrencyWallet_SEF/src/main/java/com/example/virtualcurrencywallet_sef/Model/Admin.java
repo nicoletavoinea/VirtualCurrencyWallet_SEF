@@ -1,5 +1,7 @@
 package com.example.virtualcurrencywallet_sef.Model;
 
+import org.json.simple.JSONObject;
+
 import java.util.Objects;
 
 public class Admin {
@@ -18,6 +20,8 @@ public class Admin {
         this.password = password;
         this.administratorPIN = administratorPIN;
     }
+
+
 
     @Override
     public String toString() {
@@ -42,6 +46,17 @@ public class Admin {
     @Override
     public int hashCode() {
         return Objects.hash(fullname, ID, phonenumber, username, password, administratorPIN);
+    }
+
+    public JSONObject adminJSON(){
+        JSONObject obj=new JSONObject();
+        obj.put("fullname",this.fullname);
+        obj.put("ID",this.ID);
+        obj.put("phonenumber",this.phonenumber);
+        obj.put("username",this.username);
+        obj.put("password",this.password);
+        obj.put("administratorPIN",this.administratorPIN);
+        return obj;
     }
 
     public String getFullname() {
