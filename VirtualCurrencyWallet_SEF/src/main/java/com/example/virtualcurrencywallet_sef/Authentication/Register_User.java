@@ -10,7 +10,7 @@ import javafx.scene.control.TextField;
 
 public class Register_User {
     @FXML
-    Label label_InvalidAge;
+    Label label_Error;
     @FXML
     TextField field_FullName;
     @FXML
@@ -36,6 +36,9 @@ public class Register_User {
 
     @FXML
     public void register(ActionEvent event) throws Exception{
+        checkEmptyFields();
+        checkValidInfo();
+
         Main m= new Main();
         m.changeScene("Menu_User.fxml");
     }
@@ -44,5 +47,37 @@ public class Register_User {
     public void back(ActionEvent event) throws Exception{
         Main m= new Main();
         m.changeScene("LogIn.fxml");
+    }
+
+    public void checkEmptyFields(){
+        if(field_FullName.getText().isEmpty()){
+            label_Error.setText("You must enter your full name");
+        }
+        else if (field_ID.getText().isEmpty()){
+            label_Error.setText("You must enter your ID");
+        }
+        else if (field_PhoneNumber.getText().isEmpty()){
+            label_Error.setText("You must enter your phone number");
+        }
+        else if(field_HomeAdress.getText().isEmpty()){
+            label_Error.setText("You must enter your home address");
+        }
+        else if(field_CardNumber.getText().isEmpty()){
+            label_Error.setText("You must enter your card number");
+        }
+        else if(field_PIN.getText().isEmpty()){
+            label_Error.setText("You must enter your card PIN");
+        }
+        else if(field_Username.getText().isEmpty()){
+            label_Error.setText("You must choose an username");
+        }
+        else if(field_Password.getText().isEmpty()){
+            label_Error.setText("Password can't be empty");
+        }
+    }
+
+    public void checkValidInfo(){
+
+
     }
 }
