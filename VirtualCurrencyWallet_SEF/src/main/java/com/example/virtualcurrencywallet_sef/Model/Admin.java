@@ -6,6 +6,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Objects;
 
 public class Admin {
@@ -128,5 +130,19 @@ public class Admin {
             if(username.equals(object.get("username"))) return i;
         }
         return -1;
+    }
+
+    public boolean isUnderage(String ID){
+
+        int year=((ID.charAt(1)-'0')*10) + (ID.charAt(2)-'0');
+        int month=((ID.charAt(3)-'0')*10) + (ID.charAt(4)-'0');
+        int day=((ID.charAt(5)-'0')*10) + (ID.charAt(6)-'0');
+        if(year<22) year=year+2000;
+        else year=year+1900;
+        LocalDate birthdate= LocalDate.of(year,month,day);
+        int age= Period.between(birthdate,LocalDate.now()).getYears();
+
+        if(age<18) return true;
+        return false;
     }
 }
