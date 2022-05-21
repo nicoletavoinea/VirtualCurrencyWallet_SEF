@@ -1,6 +1,6 @@
 package com.example.virtualcurrencywallet_sef.Model;
 
-import com.example.virtualcurrencywallet_sef.Database.FileHandler;
+import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -124,7 +124,7 @@ public class Admin {
 
     public int adminExists(String username)throws ParseException, IOException {
         FileHandler fileHandler= new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Admins.json");
-        JSONArray jsonArray=fileHandler.readusers();
+        JSONArray jsonArray=fileHandler.read();
         for(int i=0;i<jsonArray.size();i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);
             if(username.equals(object.get("username"))) return i;

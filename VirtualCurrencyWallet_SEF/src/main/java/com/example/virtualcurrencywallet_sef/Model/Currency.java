@@ -1,6 +1,10 @@
 package com.example.virtualcurrencywallet_sef.Model;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 public class Currency {
     private final String name;
@@ -21,5 +25,16 @@ public class Currency {
         object.put("name",this.name);
         object.put("rate",this.rate);
         return object;
+    }
+
+    public int alreadyExists(String name) throws IOException, ParseException {
+        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        JSONArray jsonArray=fileHandler.read();
+        for(int i=0;i<jsonArray.size();i++){
+            JSONObject object=(JSONObject) jsonArray.get(i);
+            if((name.equals(object.get("name"))))
+                return i;
+        }
+        return -1;
     }
 }

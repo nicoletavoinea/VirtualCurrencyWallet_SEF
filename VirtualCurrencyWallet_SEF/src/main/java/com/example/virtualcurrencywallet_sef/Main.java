@@ -1,6 +1,6 @@
 package com.example.virtualcurrencywallet_sef;
 
-import com.example.virtualcurrencywallet_sef.Database.FileHandler;
+import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import com.example.virtualcurrencywallet_sef.Model.Admin;
 import com.example.virtualcurrencywallet_sef.Model.Currency;
 import com.example.virtualcurrencywallet_sef.Model.User;
@@ -32,11 +32,25 @@ public class Main extends Application {
         fw.flush();
         fw.close();*/
 
+     /*   User user=new User("fn","id","pn","adr","cn","pin","un","pw");
+        User user2=new User("fn2","id2","pn2","adr2","cn2","pin2","un2","pw2");
+        FileWriter fw=new FileWriter("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json",true);
+        fw.write(user.userJSON().toJSONString()+"\n");
+        fw.write(user2.userJSON().toJSONString()+"\n");
+        fw.flush();
+        fw.close();*/
+
+        /*
+
+
         Currency currency=new Currency("Euro",1.0);
         FileWriter fileWriter=new FileWriter("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
         fileWriter.write(currency.currencyJSON().toJSONString());
         fileWriter.flush();
         fileWriter.close();
+
+*/
+
 
       /* Admin admin=new Admin("fullname","ID","075","admin","psw","PIN");
         Admin admin2=new Admin("fullname22","ID22","07522","admin222","psw222","PIN222");
@@ -55,10 +69,10 @@ public class Main extends Application {
         JSONObject user1=(JSONObject) jobj.get(0);
         System.out.println( (String) user1.get("username"));*/
 
-      /*  JSONArray users= FileHandler.readusers();
+      /*  JSONArray users= FileHandler.read();
         JSONObject user1= (JSONObject) users.get(1);
         user1.put("username","schimbat");
-        FileHandler.writeusers(users);*/
+        FileHandler.write(users);*/
 
 
         stg=primarystage;
