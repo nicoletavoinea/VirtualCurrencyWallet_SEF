@@ -90,6 +90,7 @@ public class LogIn {
         FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Admins.json");
         JSONArray jsonArray=fileHandler.read();
 
+
         int adminPosition=admin.adminExists(field_username.getText());
         if(adminPosition!=-1){
             JSONObject jsonObject= (JSONObject) jsonArray.get(adminPosition);

@@ -1,6 +1,8 @@
 package com.example.virtualcurrencywallet_sef.Model;
 
 import com.example.virtualcurrencywallet_sef.Model.FileHandler;
+import javafx.util.Duration;
+import javafx.util.converter.LocalDateStringConverter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -9,6 +11,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
+import java.time.temporal.TemporalAccessor;
 import java.util.Objects;
 public class User {
     private String fullname;
@@ -32,6 +35,7 @@ public class User {
         this.password = null;
         this.sums=null;
     }
+
 
     public User(String fullname, String ID, String phonenumber, String adress, String cardnumber, String PIN, String username, String password) {
         this.fullname = fullname;
