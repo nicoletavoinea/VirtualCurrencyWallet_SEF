@@ -4,6 +4,7 @@ import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import com.example.virtualcurrencywallet_sef.Main;
 import com.example.virtualcurrencywallet_sef.Model.Admin;
 import com.example.virtualcurrencywallet_sef.Model.User;
+import com.example.virtualcurrencywallet_sef.Model.Holder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -76,6 +77,8 @@ public class LogIn {
         if(userPosition!=-1){
             JSONObject jsonObject= (JSONObject) jsonArray.get(userPosition);
             if(field_password.getText().equals(jsonObject.get("password"))){
+                Holder holder=Holder.getInstance();
+                holder.set(jsonObject);
                 Main m=new Main();
                 m.changeScene("Menu_User.fxml");
             }

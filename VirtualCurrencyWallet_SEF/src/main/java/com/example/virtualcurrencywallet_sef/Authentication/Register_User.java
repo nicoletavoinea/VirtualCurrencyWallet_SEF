@@ -2,6 +2,7 @@ package com.example.virtualcurrencywallet_sef.Authentication;
 
 import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import com.example.virtualcurrencywallet_sef.Main;
+import com.example.virtualcurrencywallet_sef.Model.Holder;
 import com.example.virtualcurrencywallet_sef.Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -48,6 +49,8 @@ public class Register_User {
             User user=new User(field_FullName.getText(),field_ID.getText(),field_PhoneNumber.getText(),field_HomeAdress.getText(),field_CardNumber.getText(),field_PIN.getText(),field_Username.getText(),field_Password.getText());
             jsonArray.add(user.userJSON());
             fileHandler.write(jsonArray);
+            Holder holder=Holder.getInstance();
+            holder.set(user.userJSON());
             Main m= new Main();
             m.changeScene("Menu_User.fxml");
         }
