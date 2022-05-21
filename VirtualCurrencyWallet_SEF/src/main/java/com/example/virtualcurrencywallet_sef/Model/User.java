@@ -1,8 +1,11 @@
 package com.example.virtualcurrencywallet_sef.Model;
 
+import com.example.virtualcurrencywallet_sef.Database.FileHandler;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
 
+import java.io.IOException;
 import java.util.Objects;
 public class User {
     private String fullname;
@@ -66,6 +69,16 @@ public class User {
         obj.put("password",this.password);
 
         return obj;
+    }
+
+    public int usernameExists(String username) throws IOException, ParseException {
+        FileHandler fileHandler=new FileHandler();
+        JSONArray jsonArray=fileHandler.readusers("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+        for(int i=0;i<jsonArray.size();i++) {
+            JSONObject object = (JSONObject) jsonArray.get(i);
+            if(username.equals(object.get("username"))) return i;
+        }
+        return -1;
     }
 
     public void setFullname(String fullname) {this.fullname = fullname;}

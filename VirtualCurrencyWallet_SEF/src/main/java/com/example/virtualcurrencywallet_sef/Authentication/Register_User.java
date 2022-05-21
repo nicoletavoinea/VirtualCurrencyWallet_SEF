@@ -39,8 +39,8 @@ public class Register_User {
         checkEmptyFields();
         checkValidInfo();
 
-        Main m= new Main();
-        m.changeScene("Menu_User.fxml");
+    //    Main m= new Main();
+      //  m.changeScene("Menu_User.fxml");
     }
 
     @FXML
