@@ -1,12 +1,18 @@
 package com.example.virtualcurrencywallet_sef.Authentication;
 
+import com.example.virtualcurrencywallet_sef.Database.FileHandler;
 import com.example.virtualcurrencywallet_sef.Main;
+import com.example.virtualcurrencywallet_sef.Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import org.json.simple.JSONArray;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 public class Register_User {
     @FXML
@@ -36,11 +42,16 @@ public class Register_User {
 
     @FXML
     public void register(ActionEvent event) throws Exception{
-        checkEmptyFields();
-        checkValidInfo();
+        if(checkEmptyFields()==0 && checkValidInfo()){
+            FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+            JSONArray jsonArray=fileHandler.readusers();
+            User user=new User(field_FullName.getText(),field_ID.getText(),field_PhoneNumber.getText(),field_HomeAdress.getText(),field_CardNumber.getText(),field_PIN.getText(),field_Username.getText(),field_Password.getText());
+            jsonArray.add(user.userJSON());
+            fileHandler.writeusers(jsonArray);
+            Main m= new Main();
+            m.changeScene("Menu_User.fxml");
+        }
 
-    //    Main m= new Main();
-      //  m.changeScene("Menu_User.fxml");
     }
 
     @FXML
@@ -49,35 +60,53 @@ public class Register_User {
         m.changeScene("LogIn.fxml");
     }
 
-    public void checkEmptyFields(){
+    public int checkEmptyFields(){
         if(field_FullName.getText().isEmpty()){
             label_Error.setText("You must enter your full name");
+            return 1;
         }
         else if (field_ID.getText().isEmpty()){
             label_Error.setText("You must enter your ID");
+            return 1;
         }
         else if (field_PhoneNumber.getText().isEmpty()){
             label_Error.setText("You must enter your phone number");
+            return 1;
         }
         else if(field_HomeAdress.getText().isEmpty()){
             label_Error.setText("You must enter your home address");
+            return 1;
         }
         else if(field_CardNumber.getText().isEmpty()){
             label_Error.setText("You must enter your card number");
+            return 1;
         }
         else if(field_PIN.getText().isEmpty()){
             label_Error.setText("You must enter your card PIN");
+            return 1;
         }
         else if(field_Username.getText().isEmpty()){
             label_Error.setText("You must choose an username");
+            return 1;
         }
         else if(field_Password.getText().isEmpty()){
             label_Error.setText("Password can't be empty");
+            return 1;
         }
+
+        return 0;
     }
 
-    public void checkValidInfo(){
-
-
+    public boolean checkValidInfo() throws IOException, ParseException {
+        User user=new User();
+        if(user.usernameExists(field_Username.getText())!=-1) {
+            label_Error.setText("Username already exists :( Try a new one");
+            return false;
+        }
+        if(user.isUnderage(field_ID.getText())){
+            label_Error.setText("User can not be underage");
+            return false;
+        }
+        return true;
     }
 }
