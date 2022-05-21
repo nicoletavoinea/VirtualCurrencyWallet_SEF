@@ -1,5 +1,6 @@
 package com.example.virtualcurrencywallet_sef;
 
+import com.example.virtualcurrencywallet_sef.Database.FileHandler;
 import com.example.virtualcurrencywallet_sef.Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -36,6 +37,11 @@ public class Main extends Application {
         JSONArray jobj=(JSONArray) obj;
         JSONObject user1=(JSONObject) jobj.get(0);
         System.out.println( (String) user1.get("username"));*/
+
+      /*  JSONArray users= FileHandler.readusers();
+        JSONObject user1= (JSONObject) users.get(1);
+        user1.put("username","schimbat");
+        FileHandler.writeusers(users);*/
 
 
         stg=primarystage;
