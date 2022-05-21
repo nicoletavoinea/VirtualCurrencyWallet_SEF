@@ -1,7 +1,13 @@
 package com.example.virtualcurrencywallet_sef.Model;
 
+import com.example.virtualcurrencywallet_sef.Database.FileHandler;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.ParseException;
 
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Objects;
 
 public class Admin {
@@ -11,6 +17,15 @@ public class Admin {
     private String username;
     private String password;
     private String administratorPIN;
+
+    public Admin(){
+        this.fullname=null;
+        this.ID=null;
+        this.phonenumber=null;
+        this.username=null;
+        this.password=null;
+        this.administratorPIN=null;
+    }
 
     public Admin(String fullname, String ID, String phonenumber, String username, String password, String administratorPIN) {
         this.fullname = fullname;
@@ -105,5 +120,29 @@ public class Admin {
 
     public void setAdministratorPIN(String administratorPIN) {
         this.administratorPIN = administratorPIN;
+    }
+
+    public int adminExists(String username)throws ParseException, IOException {
+        FileHandler fileHandler= new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Admins.json");
+        JSONArray jsonArray=fileHandler.readusers();
+        for(int i=0;i<jsonArray.size();i++) {
+            JSONObject object = (JSONObject) jsonArray.get(i);
+            if(username.equals(object.get("username"))) return i;
+        }
+        return -1;
+    }
+
+    public boolean isUnderage(String ID){
+
+        int year=((ID.charAt(1)-'0')*10) + (ID.charAt(2)-'0');
+        int month=((ID.charAt(3)-'0')*10) + (ID.charAt(4)-'0');
+        int day=((ID.charAt(5)-'0')*10) + (ID.charAt(6)-'0');
+        if(year<22) year=year+2000;
+        else year=year+1900;
+        LocalDate birthdate= LocalDate.of(year,month,day);
+        int age= Period.between(birthdate,LocalDate.now()).getYears();
+
+        if(age<18) return true;
+        return false;
     }
 }
