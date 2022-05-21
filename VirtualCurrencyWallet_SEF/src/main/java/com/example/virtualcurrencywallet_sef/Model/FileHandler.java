@@ -19,7 +19,7 @@ public class FileHandler {
         this.path=path;
     }
 
-    public static JSONArray readusers() throws IOException, ParseException {
+    public JSONArray readusers() throws IOException, ParseException {
         JSONParser jsonParser=new JSONParser();
         FileReader fileReader=new FileReader(this.path);
         Scanner scanner = new Scanner(fileReader);
@@ -29,7 +29,7 @@ public class FileHandler {
 
     }
 
-    public static void writeusers(JSONArray jsonArray) throws IOException {
+    public void writeusers(JSONArray jsonArray) throws IOException {
         FileWriter fw=new FileWriter(this.path);
         fw.write("[");
         for(int i=0;i<jsonArray.size();i++) {
