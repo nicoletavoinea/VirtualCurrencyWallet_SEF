@@ -1,6 +1,6 @@
 package com.example.virtualcurrencywallet_sef.Authentication;
 
-import com.example.virtualcurrencywallet_sef.Database.FileHandler;
+import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import com.example.virtualcurrencywallet_sef.Main;
 import com.example.virtualcurrencywallet_sef.Model.Admin;
 import javafx.event.ActionEvent;
@@ -10,10 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileWriter;
 import java.io.IOException;
 
 public class Register_Admin {
@@ -42,10 +40,10 @@ public class Register_Admin {
     public void register(ActionEvent event) throws Exception{
         if(checkEmptyFields()==0 && checkValidInfo()==1){
             FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Admins.json");
-            JSONArray admins= fileHandler.readusers();
+            JSONArray admins= fileHandler.read();
             Admin newadmin= new Admin(field_FullName.getText(),field_ID.getText(),field_PhoneNumber.getText(),field_Username.getText(),field_Password.getText(),field_AdminPIN.getText());
             admins.add(newadmin.adminJSON());
-            fileHandler.writeusers(admins);
+            fileHandler.write(admins);
             Main m= new Main();
             m.changeScene("Menu_Admin.fxml");
         }

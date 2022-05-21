@@ -1,6 +1,6 @@
 package com.example.virtualcurrencywallet_sef.Authentication;
 
-import com.example.virtualcurrencywallet_sef.Database.FileHandler;
+import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import com.example.virtualcurrencywallet_sef.Main;
 import com.example.virtualcurrencywallet_sef.Model.User;
 import javafx.event.ActionEvent;
@@ -44,10 +44,10 @@ public class Register_User {
     public void register(ActionEvent event) throws Exception{
         if(checkEmptyFields()==0 && checkValidInfo()){
             FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
-            JSONArray jsonArray=fileHandler.readusers();
+            JSONArray jsonArray=fileHandler.read();
             User user=new User(field_FullName.getText(),field_ID.getText(),field_PhoneNumber.getText(),field_HomeAdress.getText(),field_CardNumber.getText(),field_PIN.getText(),field_Username.getText(),field_Password.getText());
             jsonArray.add(user.userJSON());
-            fileHandler.writeusers(jsonArray);
+            fileHandler.write(jsonArray);
             Main m= new Main();
             m.changeScene("Menu_User.fxml");
         }
