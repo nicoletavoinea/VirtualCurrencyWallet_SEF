@@ -2,6 +2,7 @@ package com.example.virtualcurrencywallet_sef;
 
 import com.example.virtualcurrencywallet_sef.Database.FileHandler;
 import com.example.virtualcurrencywallet_sef.Model.Admin;
+import com.example.virtualcurrencywallet_sef.Model.Currency;
 import com.example.virtualcurrencywallet_sef.Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +31,12 @@ public class Main extends Application {
         fw.write(user2.userJSON().toJSONString()+"\n");
         fw.flush();
         fw.close();*/
+
+        Currency currency=new Currency("Euro",1.0);
+        FileWriter fileWriter=new FileWriter("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        fileWriter.write(currency.currencyJSON().toJSONString());
+        fileWriter.flush();
+        fileWriter.close();
 
       /* Admin admin=new Admin("fullname","ID","075","admin","psw","PIN");
         Admin admin2=new Admin("fullname22","ID22","07522","admin222","psw222","PIN222");
