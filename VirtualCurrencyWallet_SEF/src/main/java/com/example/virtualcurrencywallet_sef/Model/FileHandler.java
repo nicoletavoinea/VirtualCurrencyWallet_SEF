@@ -12,9 +12,16 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class FileHandler {
-    public static JSONArray readusers(String path) throws IOException, ParseException {
+    private String path;
+
+    public FileHandler(String path)
+    {
+        this.path=path;
+    }
+
+    public JSONArray readusers() throws IOException, ParseException {
         JSONParser jsonParser=new JSONParser();
-        FileReader fileReader=new FileReader(path);
+        FileReader fileReader=new FileReader(this.path);
         Scanner scanner = new Scanner(fileReader);
         Object object = jsonParser.parse(fileReader);
         JSONArray jsonArray = (JSONArray) object;
@@ -22,8 +29,8 @@ public class FileHandler {
 
     }
 
-    public static void writeusers(JSONArray jsonArray,String path) throws IOException {
-        FileWriter fw=new FileWriter(path);
+    public void writeusers(JSONArray jsonArray) throws IOException {
+        FileWriter fw=new FileWriter(this.path);
         fw.write("[");
         for(int i=0;i<jsonArray.size();i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);
