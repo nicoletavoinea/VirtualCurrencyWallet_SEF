@@ -46,8 +46,8 @@ public class Register_Admin {
             Admin newadmin= new Admin(field_FullName.getText(),field_ID.getText(),field_PhoneNumber.getText(),field_Username.getText(),field_Password.getText(),field_AdminPIN.getText());
             admins.add(newadmin.adminJSON());
             fileHandler.writeusers(admins);
-            // Main m= new Main();
-            //  m.changeScene("Menu_Admin.fxml");
+            Main m= new Main();
+            m.changeScene("Menu_Admin.fxml");
         }
     }
 
