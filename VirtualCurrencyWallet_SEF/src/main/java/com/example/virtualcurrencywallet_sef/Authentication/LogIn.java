@@ -1,6 +1,6 @@
 package com.example.virtualcurrencywallet_sef.Authentication;
 
-import com.example.virtualcurrencywallet_sef.Database.FileHandler;
+import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import com.example.virtualcurrencywallet_sef.Main;
 import com.example.virtualcurrencywallet_sef.Model.Admin;
 import com.example.virtualcurrencywallet_sef.Model.User;
@@ -70,7 +70,7 @@ public class LogIn {
     public void logInUser() throws IOException, ParseException {
         User user=new User();
         FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
-        JSONArray jsonArray=fileHandler.readusers();
+        JSONArray jsonArray=fileHandler.read();
 
         int userPosition=user.usernameExists(field_username.getText());
         if(userPosition!=-1){
@@ -88,7 +88,8 @@ public class LogIn {
     public void logInAdmin() throws IOException, ParseException {
         Admin admin=new Admin();
         FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Admins.json");
-        JSONArray jsonArray=fileHandler.readusers();
+        JSONArray jsonArray=fileHandler.read();
+
 
         int adminPosition=admin.adminExists(field_username.getText());
         if(adminPosition!=-1){

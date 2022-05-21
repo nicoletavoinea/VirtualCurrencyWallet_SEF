@@ -1,6 +1,6 @@
 package com.example.virtualcurrencywallet_sef.Model;
 
-import com.example.virtualcurrencywallet_sef.Database.FileHandler;
+import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import javafx.util.Duration;
 import javafx.util.converter.LocalDateStringConverter;
 import org.json.simple.JSONArray;
@@ -10,6 +10,7 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 import java.time.temporal.TemporalAccessor;
 import java.util.Objects;
 public class User {
@@ -21,6 +22,7 @@ public class User {
     private String PIN;
     private String username;
     private String password;
+    private ArrayList <Double> sums;
 
     public User(){
         this.fullname = null;
@@ -31,7 +33,9 @@ public class User {
         this.PIN = null;
         this.username = null;
         this.password = null;
+        this.sums=null;
     }
+
 
     public User(String fullname, String ID, String phonenumber, String adress, String cardnumber, String PIN, String username, String password) {
         this.fullname = fullname;
@@ -42,6 +46,8 @@ public class User {
         this.PIN = PIN;
         this.username = username;
         this.password = password;
+        this.sums=new ArrayList<>();
+        sums.add(0.0);
     }
 
     @Override
@@ -83,13 +89,14 @@ public class User {
         obj.put("PIN",this.PIN);
         obj.put("username",this.username);
         obj.put("password",this.password);
+        obj.put("sums",this.sums);
 
         return obj;
     }
 
     public int usernameExists(String username) throws IOException, ParseException {
         FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
-        JSONArray jsonArray=fileHandler.readusers();
+        JSONArray jsonArray=fileHandler.read();
         for(int i=0;i<jsonArray.size();i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);
             if(username.equals(object.get("username"))) return i;
