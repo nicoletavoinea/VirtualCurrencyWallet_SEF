@@ -32,7 +32,7 @@ public class Admin {
         this.ID = ID;
         this.phonenumber = phonenumber;
         this.username = username;
-        this.password = password;
+        this.password = Encryptor.encrypt(password,username);
         this.administratorPIN = administratorPIN;
     }
 

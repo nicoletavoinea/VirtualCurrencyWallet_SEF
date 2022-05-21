@@ -1,10 +1,7 @@
 package com.example.virtualcurrencywallet_sef.Authentication;
 
-import com.example.virtualcurrencywallet_sef.Model.FileHandler;
+import com.example.virtualcurrencywallet_sef.Model.*;
 import com.example.virtualcurrencywallet_sef.Main;
-import com.example.virtualcurrencywallet_sef.Model.Admin;
-import com.example.virtualcurrencywallet_sef.Model.User;
-import com.example.virtualcurrencywallet_sef.Model.Holder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -76,7 +73,8 @@ public class LogIn {
         int userPosition=user.usernameExists(field_username.getText());
         if(userPosition!=-1){
             JSONObject jsonObject= (JSONObject) jsonArray.get(userPosition);
-            if(field_password.getText().equals(jsonObject.get("password"))){
+
+            if(Encryptor.verify(field_password.getText(),(String)jsonObject.get("password"),(String)jsonObject.get("username"))){
                 Holder holder=Holder.getInstance();
                 holder.set(jsonObject);
                 Main m=new Main();
@@ -97,7 +95,7 @@ public class LogIn {
         int adminPosition=admin.adminExists(field_username.getText());
         if(adminPosition!=-1){
             JSONObject jsonObject= (JSONObject) jsonArray.get(adminPosition);
-            if(field_password.getText().equals(jsonObject.get("password"))){
+            if(Encryptor.verify(field_password.getText(),(String)jsonObject.get("password"),(String)jsonObject.get("username"))){
                 Main m=new Main();
                 m.changeScene("Menu_Admin.fxml");
             }

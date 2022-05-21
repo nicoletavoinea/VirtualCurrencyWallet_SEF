@@ -43,9 +43,9 @@ public class User {
         this.phonenumber = phonenumber;
         this.adress = adress;
         this.cardnumber = cardnumber;
-        this.PIN = PIN;
+        this.PIN = Encryptor.encrypt(PIN,cardnumber);
         this.username = username;
-        this.password = password;
+        this.password = Encryptor.encrypt(password,username);
         this.sums=new ArrayList<>();
         sums.add(0.0);
     }
