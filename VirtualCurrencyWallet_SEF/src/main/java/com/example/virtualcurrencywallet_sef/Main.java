@@ -1,9 +1,6 @@
 package com.example.virtualcurrencywallet_sef;
 
-import com.example.virtualcurrencywallet_sef.Model.FileHandler;
-import com.example.virtualcurrencywallet_sef.Model.Admin;
-import com.example.virtualcurrencywallet_sef.Model.Currency;
-import com.example.virtualcurrencywallet_sef.Model.User;
+import com.example.virtualcurrencywallet_sef.Model.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -31,6 +28,8 @@ public class Main extends Application {
         fw.write(user2.userJSON().toJSONString()+"\n");
         fw.flush();
         fw.close();*/
+
+
 
      /*   User user=new User("fn","id","pn","adr","cn","pin","un","pw");
         User user2=new User("fn2","id2","pn2","adr2","cn2","pin2","un2","pw2");
