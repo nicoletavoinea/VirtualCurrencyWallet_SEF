@@ -1,6 +1,7 @@
 package com.example.virtualcurrencywallet_sef.UserFunctions;
 
 import com.example.virtualcurrencywallet_sef.Main;
+import com.example.virtualcurrencywallet_sef.Model.Encryptor;
 import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import com.example.virtualcurrencywallet_sef.Model.Holder;
 import com.example.virtualcurrencywallet_sef.Model.User;
@@ -49,9 +50,8 @@ public class AddMoney {
 
         int userposition= user.usernameExists((String) objectH.get("username"));
         JSONObject objectToReplace= (JSONObject) jsonArray.get(userposition);
-
         if(objectH.get("cardnumber").equals(field_cardnumber.getText())){
-            if(objectH.get("PIN").equals(field_pin.getText())) {
+            if(Encryptor.verify(field_pin.getText(), (String) objectH.get("PIN"), (String) objectH.get("cardnumber"))) {
                 ArrayList<Double> sumsarray= (ArrayList<Double>) objectH.get("sums");
                 double initialsum=sumsarray.get(0);
                 double finalsum=initialsum + Double.parseDouble(field_sum.getText());

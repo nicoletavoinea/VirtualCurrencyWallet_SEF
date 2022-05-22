@@ -3,6 +3,7 @@ package com.example.virtualcurrencywallet_sef.UserFunctions;
 import com.example.virtualcurrencywallet_sef.Main;
 import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import com.example.virtualcurrencywallet_sef.Model.Holder;
+import com.example.virtualcurrencywallet_sef.Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -66,6 +67,9 @@ public class Transfer {
         FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
         JSONArray jsonArray=fileHandler.read();
         int i;      //returns the index of the user;
+        User user=new User();
+        int index_from= user.usernameExists((String) current.get("username"));
+        System.out.println("Indexul meu:" + index_from);
         for (i=0; i<jsonArray.size();i++){
             JSONObject object = (JSONObject) jsonArray.get(i);
             if (object.get("fullname").equals(field_FullName.getText()) && object.get("ID").equals(field_PID.getText()))
@@ -89,7 +93,9 @@ public class Transfer {
         ArrayList<Double> sumsarray=(ArrayList<Double>)current.get("sums");
         if (sumsarray.get(j) >= sum){
             sumsarray.set(j, sumsarray.get(j)-sum);
-            current.replace("sums",sumsarray);
+            JSONObject from=(JSONObject) jsonArray.get(index_from);
+            from.replace("sums",sumsarray);
+            jsonArray.set(index_from,from);
             JSONObject object= (JSONObject) jsonArray.get(i);
             sumsarray=(ArrayList<Double>)object.get("sums");
             sumsarray.set(j,sumsarray.get(j)+(sum*(1.0-c)));

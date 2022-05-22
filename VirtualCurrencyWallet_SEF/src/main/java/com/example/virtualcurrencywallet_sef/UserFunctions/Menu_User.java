@@ -20,6 +20,8 @@ public class Menu_User {
     private Button button_transfer;
     @FXML
     private Label label_welcome;
+    @FXML
+    private Button button_view;
 
     public Menu_User(){
     }
@@ -28,6 +30,12 @@ public class Menu_User {
     private void addMoney(ActionEvent event) throws IOException {
         Main m=new Main();
         m.changeScene("AddMoney.fxml");
+    }
+
+    @FXML
+    private void viewWallet(ActionEvent event) throws IOException {
+        Main m=new Main();
+        m.changeScene("ViewWallet.fxml");
     }
 
     @FXML
