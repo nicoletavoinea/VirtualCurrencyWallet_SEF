@@ -146,5 +146,7 @@ public class User {
     public void setUsername(String username) {this.username = username;}
     public String getUsername() {return this.username;}
     public void setPassword(String password) {this.password = Encryptor.encrypt(password,username);}
-    public String getPassword() {return this.password;}
+    public String getPassword() {return password;}
+    public void setSums(ArrayList<Double> sums) {this.sums = sums;}
+    public ArrayList<Double> getSums() {return sums;}
 }
