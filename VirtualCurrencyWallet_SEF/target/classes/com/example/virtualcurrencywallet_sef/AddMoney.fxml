@@ -9,11 +9,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.UserFunctions.AddMoney">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.UserFunctions.AddMoney">
    <children>
+      <ImageView fitHeight="966.0" fitWidth="1420.0" layoutX="-500.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/background2.jpg" />
+         </image>
+      </ImageView>
       <Button fx:id="button_back" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <ImageView fitHeight="113.0" fitWidth="102.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
@@ -36,47 +41,56 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="349.0" text="add    money" textFill="#141878">
+      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="349.0" text="Add money" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
       </Label>
-      <TextField fx:id="field_sum" layoutX="110.0" layoutY="338.0" prefHeight="25.0" prefWidth="112.0" promptText="Sum" />
-      <Label layoutX="57.0" layoutY="331.0" prefHeight="39.0" prefWidth="53.0" text="Sum:" textFill="#141878">
+      <TextField fx:id="field_sum" layoutX="136.0" layoutY="345.0" prefHeight="39.0" prefWidth="150.0" promptText="Sum">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="System Bold" size="16.0" />
+         </font></TextField>
+      <Label layoutX="59.0" layoutY="345.0" prefHeight="39.0" prefWidth="102.0" text="Sum:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="223.0" layoutY="331.0" prefHeight="39.0" prefWidth="53.0" text="€" textFill="#141878">
+      <Label layoutX="294.0" layoutY="345.0" prefHeight="39.0" prefWidth="138.0" text="€" textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="477.0" layoutY="307.0" prefHeight="50.0" prefWidth="138.0" text="Card number:" textFill="#141878">
+      <Label layoutX="397.0" layoutY="300.0" prefHeight="50.0" prefWidth="175.0" text="Card number:" textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="477.0" layoutY="345.0" prefHeight="50.0" prefWidth="138.0" text="Card PIN:" textFill="#141878">
+      <Label layoutX="397.0" layoutY="377.0" prefHeight="52.0" prefWidth="175.0" text="Card PIN:" textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="field_cardnumber" layoutX="615.0" layoutY="319.0" prefHeight="24.0" prefWidth="257.0" promptText="Card Number" />
-      <PasswordField fx:id="field_pin" layoutX="615.0" layoutY="358.0" prefHeight="25.0" prefWidth="257.0" promptText="PIN code" />
-      <Label fx:id="label_invalidcredentials" layoutX="615.0" layoutY="288.0" prefHeight="25.0" prefWidth="257.0" textFill="#bc1d1d">
+      <TextField fx:id="field_cardnumber" layoutX="572.0" layoutY="306.0" prefHeight="39.0" prefWidth="300.0" promptText="Card Number">
          <font>
-            <Font name="Century Gothic Bold" size="15.0" />
+            <Font name="System Bold" size="16.0" />
+         </font></TextField>
+      <PasswordField fx:id="field_pin" layoutX="572.0" layoutY="384.0" prefHeight="39.0" prefWidth="300.0" promptText="PIN code">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></PasswordField>
+      <Label fx:id="label_invalidcredentials" alignment="CENTER" contentDisplay="CENTER" layoutX="450.0" layoutY="244.0" prefHeight="50.0" prefWidth="349.0" textAlignment="CENTER" textFill="#bc1d1d">
+         <font>
+            <Font name="Century Gothic Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="label_successful" contentDisplay="CENTER" layoutX="301.0" layoutY="473.0" prefHeight="25.0" prefWidth="245.0" textAlignment="CENTER" textFill="#1eba27">
+      <Label fx:id="label_successful" alignment="CENTER" contentDisplay="CENTER" layoutX="306.0" layoutY="512.0" prefHeight="60.0" prefWidth="288.0" textAlignment="CENTER" textFill="#1eba27">
          <font>
-            <Font name="Century Gothic Bold" size="15.0" />
+            <Font name="Century Gothic Bold" size="22.0" />
          </font>
       </Label>
-      <Button fx:id="button_add" layoutX="336.0" layoutY="420.0" mnemonicParsing="false" onAction="#add" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Add" textFill="WHITE">
+      <Button fx:id="button_add" layoutX="363.0" layoutY="464.0" mnemonicParsing="false" onAction="#add" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Add" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
    </children>

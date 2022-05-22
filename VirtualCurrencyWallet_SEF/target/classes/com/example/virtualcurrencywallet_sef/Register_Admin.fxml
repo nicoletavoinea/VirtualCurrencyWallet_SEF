@@ -9,14 +9,92 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.Authentication.Register_Admin">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.Authentication.Register_Admin">
    <children>
+      <ImageView fitHeight="966.0" fitWidth="1420.0" layoutX="-500.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/background2.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="447.0" layoutY="217.0" prefHeight="50.0" prefWidth="102.0" text="Full name:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="444.0" layoutY="73.0" prefHeight="69.0" prefWidth="452.0" text="Please enter the following information:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="447.0" layoutY="267.0" prefHeight="50.0" prefWidth="102.0" text="Personal ID:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="447.0" layoutY="317.0" prefHeight="50.0" prefWidth="138.0" text="Phone number:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="447.0" layoutY="373.0" prefHeight="50.0" prefWidth="138.0" text="Username:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="447.0" layoutY="426.0" prefHeight="50.0" prefWidth="138.0" text="Password:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="field_PhoneNumber" layoutX="607.0" layoutY="334.0" prefHeight="24.0" prefWidth="257.0" promptText="Your phone number">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="field_ID" layoutX="607.0" layoutY="284.0" prefHeight="24.0" prefWidth="257.0" promptText="Your personal ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="field_FullName" layoutX="607.0" layoutY="234.0" prefHeight="24.0" prefWidth="257.0" promptText="Your full name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="field_Username" layoutX="607.0" layoutY="387.0" prefHeight="24.0" prefWidth="257.0" promptText="Username">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <PasswordField fx:id="field_Password" layoutX="607.0" layoutY="441.0" prefHeight="25.0" prefWidth="257.0" promptText="Password">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></PasswordField>
+      <Button fx:id="button_Register" layoutX="692.0" layoutY="636.0" mnemonicParsing="false" onAction="#register" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="label_Error" alignment="CENTER" contentDisplay="CENTER" layoutX="442.0" layoutY="142.0" prefHeight="39.0" prefWidth="426.0" textAlignment="CENTER" textFill="#8a1919">
+         <font>
+            <Font name="Century Gothic Bold" size="16.0" />
+         </font></Label>
+      <Button fx:id="button_Back" layoutX="460.0" layoutY="636.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="447.0" layoutY="476.0" prefHeight="50.0" prefWidth="175.0" text="Administrator PIN:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="field_AdminPIN" layoutX="607.0" layoutY="491.0" prefHeight="25.0" prefWidth="257.0" promptText="Admin PIN">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></PasswordField>
       <ImageView fitHeight="165.0" fitWidth="161.0" layoutX="88.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/Wallet.png" />
          </image>
       </ImageView>
-      <Label graphicTextGap="0.0" layoutX="126.0" layoutY="199.0" prefHeight="88.0" prefWidth="224.0" text="create   your" textFill="#141878">
+      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="126.0" layoutY="250.0" prefHeight="69.0" prefWidth="224.0" text="Create your" textAlignment="CENTER" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
@@ -36,65 +114,10 @@
             <Font name="Century Gothic Bold" size="30.0" />
          </font>
       </Label>
-      <Label graphicTextGap="0.0" layoutX="89.0" layoutY="508.0" prefHeight="88.0" prefWidth="294.0" text="admin   account" textAlignment="CENTER" textFill="#141878">
+      <Label graphicTextGap="0.0" layoutX="163.0" layoutY="491.0" prefHeight="69.0" prefWidth="150.0" text="Account" textAlignment="CENTER" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
       </Label>
-      <Label layoutX="450.0" layoutY="199.0" prefHeight="50.0" prefWidth="102.0" text="Full name:" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="444.0" layoutY="73.0" prefHeight="69.0" prefWidth="452.0" text="Please enter the following information:" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="450.0" layoutY="249.0" prefHeight="50.0" prefWidth="102.0" text="Personal ID:" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="450.0" layoutY="299.0" prefHeight="50.0" prefWidth="138.0" text="Phone number:" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="450.0" layoutY="358.0" prefHeight="50.0" prefWidth="138.0" text="Username:" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="450.0" layoutY="411.0" prefHeight="50.0" prefWidth="138.0" text="Password:" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="field_PhoneNumber" layoutX="610.0" layoutY="316.0" prefHeight="24.0" prefWidth="257.0" promptText="Your phone number" />
-      <TextField fx:id="field_ID" layoutX="610.0" layoutY="266.0" prefHeight="24.0" prefWidth="257.0" promptText="Your personal ID" />
-      <TextField fx:id="field_FullName" layoutX="610.0" layoutY="216.0" prefHeight="24.0" prefWidth="257.0" promptText="Your full name" />
-      <TextField fx:id="field_Username" layoutX="610.0" layoutY="372.0" prefHeight="24.0" prefWidth="257.0" promptText="Username" />
-      <PasswordField fx:id="field_Password" layoutX="610.0" layoutY="426.0" prefHeight="25.0" prefWidth="257.0" promptText="Password" />
-      <Button fx:id="button_Register" layoutX="692.0" layoutY="636.0" mnemonicParsing="false" onAction="#register" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Label fx:id="label_Error" layoutX="488.0" layoutY="142.0" prefHeight="39.0" prefWidth="294.0" textFill="#8a1919">
-         <font>
-            <Font name="Century Gothic Bold" size="14.0" />
-         </font></Label>
-      <Button fx:id="button_Back" layoutX="460.0" layoutY="636.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <Label layoutX="450.0" layoutY="461.0" prefHeight="50.0" prefWidth="175.0" text="Administrator PIN:" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <PasswordField fx:id="field_AdminPIN" layoutX="610.0" layoutY="476.0" prefHeight="25.0" prefWidth="257.0" promptText="Admin PIN" />
    </children>
 </AnchorPane>

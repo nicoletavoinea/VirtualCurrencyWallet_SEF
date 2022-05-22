@@ -9,11 +9,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.UserFunctions.ExchangeCurrency">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.UserFunctions.ExchangeCurrency">
    <children>
+      <ImageView fitHeight="966.0" fitWidth="1420.0" layoutX="-500.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/background2.jpg" />
+         </image>
+      </ImageView>
       <Button fx:id="button_back" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <ImageView fitHeight="113.0" fitWidth="102.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
@@ -36,47 +41,50 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="421.0" text="exchange    currency" textFill="#141878">
+      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="421.0" text="Exchange currency" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
       </Label>
-      <TextField fx:id="field_sum" layoutX="394.0" layoutY="325.0" prefHeight="25.0" prefWidth="112.0" promptText="Enter sum" />
-      <Label layoutX="341.0" layoutY="318.0" prefHeight="39.0" prefWidth="53.0" text="Sum:" textFill="#141878">
+      <TextField fx:id="field_sum" layoutX="386.0" layoutY="371.0" prefHeight="46.0" prefWidth="129.0" promptText="Enter sum">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></TextField>
+      <Label layoutX="327.0" layoutY="371.0" prefHeight="46.0" prefWidth="63.0" text="Sum:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_currency" layoutX="519.0" layoutY="371.0" prefHeight="46.0" prefWidth="264.0" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choice_from" layoutX="235.0" layoutY="259.0" prefHeight="46.0" prefWidth="150.0" />
+      <Label layoutX="235.0" layoutY="213.0" prefHeight="46.0" prefWidth="150.0" text="From:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choice_to" layoutX="501.0" layoutY="259.0" prefHeight="46.0" prefWidth="150.0" />
+      <Label layoutX="501.0" layoutY="213.0" prefHeight="46.0" prefWidth="150.0" text="To:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_preview" layoutX="276.0" layoutY="137.0" prefHeight="39.0" prefWidth="414.0" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_currency" layoutX="513.0" layoutY="318.0" prefHeight="39.0" prefWidth="53.0" textFill="#141878">
+      <Button fx:id="button_exchange" layoutX="358.0" layoutY="464.0" mnemonicParsing="false" onAction="#exchange" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Exchange" textFill="WHITE">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="choice_from" layoutX="235.0" layoutY="259.0" prefWidth="150.0" />
-      <Label layoutX="238.0" layoutY="220.0" prefHeight="39.0" prefWidth="53.0" text="From:" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="choice_to" layoutX="501.0" layoutY="259.0" prefWidth="150.0" />
-      <Label layoutX="501.0" layoutY="220.0" prefHeight="39.0" prefWidth="53.0" text="To:" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="label_preview" layoutX="238.0" layoutY="357.0" prefHeight="39.0" prefWidth="414.0" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <Button fx:id="button_exchange" layoutX="363.0" layoutY="420.0" mnemonicParsing="false" onAction="#exchange" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Exchange" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="label_successful" alignment="CENTER" layoutX="274.0" layoutY="482.0" prefHeight="25.0" prefWidth="353.0" textAlignment="CENTER" textFill="#1eba27">
+      <Label fx:id="label_successful" alignment="CENTER" layoutX="214.0" layoutY="523.0" prefHeight="52.0" prefWidth="463.0" textAlignment="CENTER" textFill="#1eba27">
          <font>
-            <Font name="Century Gothic Bold" size="15.0" />
+            <Font name="Century Gothic Bold" size="22.0" />
          </font>
       </Label>
    </children>

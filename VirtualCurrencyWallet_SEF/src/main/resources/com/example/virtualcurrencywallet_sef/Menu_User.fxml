@@ -7,8 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.UserFunctions.Menu_User">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.UserFunctions.Menu_User">
    <children>
+      <ImageView fitHeight="966.0" fitWidth="1420.0" layoutX="-500.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/background2.jpg" />
+         </image>
+      </ImageView>
       <Button fx:id="button_logout" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#logout" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Log Out" textFill="WHITE">
          <font>
             <Font size="18.0" />
@@ -34,47 +39,47 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="610.0" text="welcome,   *name*" textFill="#141878">
+      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="610.0" text="Welcome,   *name*" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="274.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/add.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="483.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="475.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/exchange.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="687.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="675.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/transfer.png" />
          </image>
       </ImageView>
-      <Button fx:id="button_addmoney" alignment="BOTTOM_CENTER" layoutX="274.0" layoutY="281.0" mnemonicParsing="false" onAction="#addMoney" prefHeight="188.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Add money" textAlignment="CENTER" textFill="#141878">
+      <Button fx:id="button_addmoney" alignment="BOTTOM_CENTER" layoutX="275.0" layoutY="281.0" mnemonicParsing="false" onAction="#addMoney" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Add money" textAlignment="CENTER" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="button_exchange" alignment="BOTTOM_CENTER" layoutX="484.0" layoutY="281.0" mnemonicParsing="false" onAction="#exchangeCurrency" prefHeight="213.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Exchange Currency" textAlignment="CENTER" textFill="#141878" wrapText="true">
+      <Button fx:id="button_exchange" alignment="BOTTOM_CENTER" layoutX="475.0" layoutY="281.0" mnemonicParsing="false" onAction="#exchangeCurrency" prefHeight="220.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Exchange Currency" textAlignment="CENTER" textFill="#141878" wrapText="true">
          <font>
             <Font name="Century Gothic Bold" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="button_transfer" alignment="BOTTOM_CENTER" layoutX="687.0" layoutY="281.0" mnemonicParsing="false" onAction="#transfer" prefHeight="188.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Transfer" textFill="#141878">
+      <Button fx:id="button_transfer" alignment="BOTTOM_CENTER" layoutX="675.0" layoutY="281.0" mnemonicParsing="false" onAction="#transfer" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="Transfer" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="20.0" />
          </font>
       </Button>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="73.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="75.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/Wallet.png" />
          </image>
       </ImageView>
-      <Button fx:id="button_view" alignment="BOTTOM_CENTER" layoutX="73.0" layoutY="281.0" mnemonicParsing="false" onAction="#viewWallet" prefHeight="197.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="View Wallet" textFill="#141878">
+      <Button fx:id="button_view" alignment="BOTTOM_CENTER" layoutX="75.0" layoutY="281.0" mnemonicParsing="false" onAction="#viewWallet" prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: transparent;" text="View Wallet" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="20.0" />
          </font>
