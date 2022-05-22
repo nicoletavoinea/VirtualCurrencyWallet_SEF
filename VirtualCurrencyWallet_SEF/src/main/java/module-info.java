@@ -3,6 +3,7 @@ module com.example.virtualcurrencywallet_sef {
     requires javafx.fxml;
     requires json.simple;
 
+    opens com.example.virtualcurrencywallet_sef.Model;
 
     opens com.example.virtualcurrencywallet_sef to javafx.fxml;
     exports com.example.virtualcurrencywallet_sef;

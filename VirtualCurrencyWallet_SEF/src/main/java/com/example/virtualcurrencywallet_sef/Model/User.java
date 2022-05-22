@@ -98,6 +98,15 @@ public class User {
         return obj;
     }
 
+    public static User JSONtoSimpleUser(JSONObject jsonObject){
+        User user=new User();
+        user.setFullname((String) jsonObject.get("fullname"));
+        user.setID((String) jsonObject.get("ID"));
+        user.setPhonenumber((String) jsonObject.get("phonenumber"));
+        user.setAdress((String) jsonObject.get("adress"));
+        return user;
+    }
+
     public int usernameExists(String username) throws IOException, ParseException {
         FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
         JSONArray jsonArray=fileHandler.read();
@@ -123,19 +132,19 @@ public class User {
     }
 
     public void setFullname(String fullname) {this.fullname = fullname;}
-    public String getFullname() {return fullname;}
+    public String getFullname() {return this.fullname;}
     public void setID(String ID) {this.ID = ID;}
-    public String getID() {return ID;}
+    public String getID() {return this.ID;}
     public void setPhonenumber(String phonenumber) {this.phonenumber = phonenumber;}
-    public String getPhonenumber() {return phonenumber;}
+    public String getPhonenumber() {return this.phonenumber;}
     public void setAdress(String adress) {this.adress = adress;}
-    public String getAdress() {return adress;}
+    public String getAdress() {return this.adress;}
     public void setCardnumber(String cardnumber) {this.cardnumber = cardnumber;}
-    public String getCardnumber() {return cardnumber;}
+    public String getCardnumber() {return this.cardnumber;}
     public void setPIN(String PIN) {this.PIN = Encryptor.encrypt(PIN,cardnumber);}
-    public String getPIN() {return PIN;}
+    public String getPIN() {return this.PIN;}
     public void setUsername(String username) {this.username = username;}
-    public String getUsername() {return username;}
+    public String getUsername() {return this.username;}
     public void setPassword(String password) {this.password = Encryptor.encrypt(password,username);}
-    public String getPassword() {return password;}
+    public String getPassword() {return this.password;}
 }
