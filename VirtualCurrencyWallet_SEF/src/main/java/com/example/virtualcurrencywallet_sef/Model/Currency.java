@@ -7,9 +7,13 @@ import org.json.simple.parser.ParseException;
 import java.io.IOException;
 
 public class Currency {
-    private final String name;
+    private String name;
     private double rate;
 
+    /*public  Currency(){
+        this.name=null;
+        this.rate=null;
+    }*/
     public Currency(String name, double rate){
         this.name=name;
         this.rate=rate;
@@ -26,6 +30,13 @@ public class Currency {
         object.put("rate",this.rate);
         return object;
     }
+
+   /* public static Currency JSONtoCurrency(JSONObject jsonObject){
+        Currency currency=new Currency();
+        currency.name=jsonObject.get("name");
+        currency.rate=jsonObject.get("rate");
+        return currency;
+    }*/
 
     public int alreadyExists(String name) throws IOException, ParseException {
         FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
