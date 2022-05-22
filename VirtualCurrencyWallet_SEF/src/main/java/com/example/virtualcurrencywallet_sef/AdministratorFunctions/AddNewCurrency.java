@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -37,11 +38,14 @@ public class AddNewCurrency {
         FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
         JSONArray currencies=fileHandler.read();
         Currency newcurrency=new Currency(field_CurrencyName.getText(),Double.parseDouble(field_CurrencyRate.getText()));
-        if(newcurrency.alreadyExists(field_CurrencyName.getText())!=-1)
+        if(newcurrency.alreadyExists(field_CurrencyName.getText())!=-1) {
+            label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));
             label_AlreadyExists.setText("Currency already exists!");
+        }
         else {
             currencies.add(newcurrency.currencyJSON());
             fileHandler.write(currencies);
+            label_AlreadyExists.setTextFill(Paint.valueOf("#1eba27"));
             label_AlreadyExists.setText("Successful");
             fileHandler= new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
             JSONArray users=fileHandler.read();

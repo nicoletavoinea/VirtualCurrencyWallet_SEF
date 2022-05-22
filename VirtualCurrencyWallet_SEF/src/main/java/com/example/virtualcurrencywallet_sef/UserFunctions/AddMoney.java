@@ -59,14 +59,17 @@ public class AddMoney {
                 objectToReplace.replace("sums",sumsarray);
                 fileHandler.write(jsonArray);
                 label_successful.setText("Money added successfully");
+                label_invalidcredentials.setText("");
             }
             else{
                 label_invalidcredentials.setText("Wrong card or PIN");
+                label_successful.setText("");
             }
         }
         else
         {
             label_invalidcredentials.setText("Wrong card or PIN");
+            label_successful.setText("");
         }
     }
 }
