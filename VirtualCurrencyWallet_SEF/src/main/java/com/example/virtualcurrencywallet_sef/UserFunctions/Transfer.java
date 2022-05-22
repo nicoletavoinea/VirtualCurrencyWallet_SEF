@@ -59,6 +59,9 @@ public class Transfer {
     public void transfer(ActionEvent event) throws IOException, ParseException {
         Holder holder=Holder.getInstance();
         JSONObject current=holder.get();
+        FileHandler cms= new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
+        JSONArray commission=cms.read();
+        double c= (double) ((JSONObject)commission.get(0)).get("commission");
         FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
         JSONArray jsonArray=fileHandler.read();
         int i;      //returns the index of the user;
@@ -87,7 +90,7 @@ public class Transfer {
             current.replace("sums",sumsarray);
             JSONObject object= (JSONObject) jsonArray.get(i);
             sumsarray=(ArrayList<Double>)object.get("sums");
-            sumsarray.set(j,sumsarray.get(j)+sum);
+            sumsarray.set(j,sumsarray.get(j)+(sum*(1.0-c)));
             object.replace("sums",sumsarray);
             fileHandler.write(jsonArray);
             label_InsufficientFunds.setText("Transfer complete");
