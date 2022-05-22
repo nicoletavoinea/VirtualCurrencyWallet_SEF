@@ -47,7 +47,7 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="513.0" layoutY="318.0" prefHeight="39.0" prefWidth="53.0" text="€" textFill="#141878">
+      <Label fx:id="label_currency" layoutX="513.0" layoutY="318.0" prefHeight="39.0" prefWidth="53.0" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
