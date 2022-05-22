@@ -96,6 +96,8 @@ public class LogIn {
         if(adminPosition!=-1){
             JSONObject jsonObject= (JSONObject) jsonArray.get(adminPosition);
             if(Encryptor.verify(field_password.getText(),(String)jsonObject.get("password"),(String)jsonObject.get("username"))){
+                Holder holder=Holder.getInstance();
+                holder.set(jsonObject);
                 Main m=new Main();
                 m.changeScene("Menu_Admin.fxml");
             }

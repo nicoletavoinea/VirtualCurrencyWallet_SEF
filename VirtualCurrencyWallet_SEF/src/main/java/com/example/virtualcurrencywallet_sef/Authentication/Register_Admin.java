@@ -3,6 +3,7 @@ package com.example.virtualcurrencywallet_sef.Authentication;
 import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import com.example.virtualcurrencywallet_sef.Main;
 import com.example.virtualcurrencywallet_sef.Model.Admin;
+import com.example.virtualcurrencywallet_sef.Model.Holder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -46,6 +47,8 @@ public class Register_Admin {
             Admin newadmin= new Admin(field_FullName.getText(),field_ID.getText(),field_PhoneNumber.getText(),field_Username.getText(),field_Password.getText(),field_AdminPIN.getText());
             admins.add(newadmin.adminJSON());
             fileHandler.write(admins);
+            Holder holder=Holder.getInstance();
+            holder.set(newadmin.adminJSON());
             Main m= new Main();
             m.changeScene("Menu_Admin.fxml");
         }
