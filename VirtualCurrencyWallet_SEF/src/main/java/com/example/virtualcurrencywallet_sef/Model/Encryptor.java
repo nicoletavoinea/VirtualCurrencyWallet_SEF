@@ -39,6 +39,7 @@ public class Encryptor {
         boolean returnValue=false;
         String newSecureString=encrypt(providedString,salt);
         returnValue=newSecureString.equals(securedString);
+
         return returnValue;
     }
 }
