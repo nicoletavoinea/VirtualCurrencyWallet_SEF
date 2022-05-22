@@ -17,6 +17,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 public class ExchangeCurrency {
@@ -72,56 +73,81 @@ public class ExchangeCurrency {
     }
     @FXML
     private void exchange(ActionEvent event) throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
-        JSONArray currenciesArray=fileHandler.read();
-        Holder holder=Holder.getInstance();
-        JSONObject objectH=holder.get();
-        ArrayList<Double> sumsarray= (ArrayList<Double>) objectH.get("sums");
+        if(!InvalidFields()) {
+
+            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+            JSONArray currenciesArray = fileHandler.read();
+            Holder holder = Holder.getInstance();
+            JSONObject objectH = holder.get();
+            ArrayList<Double> sumsarray = (ArrayList<Double>) objectH.get("sums");
 
 
-        //get owned sums in both currencies
-        double sum=Double.parseDouble(field_sum.getText());
-        int indexfrom=Currency.getPosition(String.valueOf(choice_from.getValue()));
-        int indexto=Currency.getPosition(String.valueOf(choice_to.getValue()));
-        double availablesum=sumsarray.get(indexfrom);
-        double sumOfSecondCurrency=sumsarray.get(indexto);
+            //get owned sums in both currencies
+            int indexfrom = Currency.getPosition(String.valueOf(choice_from.getValue()));
+            int indexto = Currency.getPosition(String.valueOf(choice_to.getValue()));
+            double availablesum = sumsarray.get(indexfrom);
+            double sumOfSecondCurrency = sumsarray.get(indexto);
 
-        //get rates of both currencies
-        JSONObject fromcurrency= (JSONObject) currenciesArray.get(Currency.getPosition(String.valueOf(choice_from.getValue())));
-        double fromrate= (double) fromcurrency.get("rate");
-        JSONObject tocurrency= (JSONObject) currenciesArray.get(Currency.getPosition(String.valueOf(choice_to.getValue())));
-        double torate= (double) tocurrency.get("rate");
+            //get rates of both currencies
+            JSONObject fromcurrency = (JSONObject) currenciesArray.get(Currency.getPosition(String.valueOf(choice_from.getValue())));
+            double fromrate = (double) fromcurrency.get("rate");
+            JSONObject tocurrency = (JSONObject) currenciesArray.get(Currency.getPosition(String.valueOf(choice_to.getValue())));
+            double torate = (double) tocurrency.get("rate");
 
 
-        //get commission
-        FileHandler cms= new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
-        JSONArray commissionObject=cms.read();
-        double commission= (double) ((JSONObject)commissionObject.get(0)).get("commission");
+            //get commission
+            FileHandler cms = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
+            JSONArray commissionObject = cms.read();
+            double commission = (double) ((JSONObject) commissionObject.get(0)).get("commission");
 
-        FileHandler fh=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
-        JSONArray usersArray=fh.read();
-        User user=new User();
-        int userposition= user.usernameExists((String) objectH.get("username"));
-        JSONObject objectToReplace= (JSONObject) usersArray.get(userposition);
+            FileHandler fh = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+            JSONArray usersArray = fh.read();
+            User user = new User();
+            int userposition = user.usernameExists((String) objectH.get("username"));
+            JSONObject objectToReplace = (JSONObject) usersArray.get(userposition);
 
-        //exchange algorithm
-        double toadd;
-        if(sum<availablesum){
-            toadd=sum*fromrate*(1-commission);
-            toadd=toadd/torate;
-            sumOfSecondCurrency=sumOfSecondCurrency+toadd;
-            availablesum=availablesum-sum;
-            sumsarray.set(indexfrom,availablesum);
-            sumsarray.set(indexto,sumOfSecondCurrency);
-            objectToReplace.replace("sums",sumsarray);
-            fh.write(usersArray);
-            label_successful.setTextFill(Paint.valueOf("#1eba27"));
-            label_successful.setText("Exchange completed successfully");
+            //exchange algorithm
+            double toadd;
+            double sum = Double.parseDouble(field_sum.getText());
+            if (sum < availablesum) {
+                toadd = sum * fromrate * (1 - commission);
+                toadd = toadd / torate;
+                sumOfSecondCurrency = sumOfSecondCurrency + toadd;
+                availablesum = availablesum - sum;
+                sumsarray.set(indexfrom, availablesum);
+                sumsarray.set(indexto, sumOfSecondCurrency);
+                objectToReplace.replace("sums", sumsarray);
+                fh.write(usersArray);
+                label_successful.setTextFill(Paint.valueOf("#1eba27"));
+                label_successful.setText("Exchange completed successfully");
+            } else {
+                label_successful.setTextFill(Paint.valueOf("#bc1d1d"));
+                label_successful.setText("Insufficient funds in chosen currency");
+            }
         }
-        else{
-            label_successful.setTextFill(Paint.valueOf("#bc1d1d"));
-            label_successful.setText("Insufficient funds in chosen currency");
+
+    }
+
+    public boolean InvalidFields(){
+        double sum;
+        if(field_sum.getText().isEmpty()){
+            label_successful.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_successful.setText("Please insert a sum");
+            return true;
         }
+        else try{
+            sum=Double.parseDouble(field_sum.getText());
+            if(sum<0){
+                label_successful.setTextFill(Paint.valueOf("#bc1d1d"));//red
+                label_successful.setText("Sum can't be a negative number");
+                return true;
+            }
+        }catch (NumberFormatException e){
+            label_successful.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_successful.setText("Sum can contain only digits");
+            return true;
+        }
+        return false;
     }
 
 
