@@ -37,4 +37,16 @@ public class Currency {
         }
         return -1;
     }
+
+    public static int getPosition(String name) throws IOException, ParseException {
+        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        JSONArray jsonArray=fileHandler.read();
+        JSONObject current;
+        for(int i=0;i<jsonArray.size();i++) {
+            current= (JSONObject) jsonArray.get(i);
+            if(name.equals(current.get("name"))) return i;
+        }
+        return -1;
+    }
+
 }

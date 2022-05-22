@@ -132,10 +132,10 @@ public class User {
     public String getAdress() {return adress;}
     public void setCardnumber(String cardnumber) {this.cardnumber = cardnumber;}
     public String getCardnumber() {return cardnumber;}
-    public void setPIN(String PIN) {this.PIN = PIN;}
+    public void setPIN(String PIN) {this.PIN = Encryptor.encrypt(PIN,cardnumber);}
     public String getPIN() {return PIN;}
     public void setUsername(String username) {this.username = username;}
     public String getUsername() {return username;}
-    public void setPassword(String password) {this.password = password;}
+    public void setPassword(String password) {this.password = Encryptor.encrypt(password,username);}
     public String getPassword() {return password;}
 }
