@@ -42,6 +42,7 @@ public class ModifyCommission {
         commission.replace("commission",Double.parseDouble(field_NewCommission.getText())/100);
         fileHandler.write(jsonArray);
         label_CommissionModified.setText("Commission modified");
+        label_CurrentCommission.setText("Current commission: " + (Double)commission.get("commission")*100 + "%");
     }
 
     @FXML
