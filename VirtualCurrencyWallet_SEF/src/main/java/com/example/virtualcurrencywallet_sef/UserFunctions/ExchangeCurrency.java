@@ -130,6 +130,11 @@ public class ExchangeCurrency {
 
     public boolean InvalidFields(){
         double sum;
+        if(choice_from.getValue()==null || choice_to.getValue()==null){
+            label_successful.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_successful.setText("Please choose exchanging currencies");
+            return true;
+        }
         if(field_sum.getText().isEmpty()){
             label_successful.setTextFill(Paint.valueOf("#bc1d1d"));//red
             label_successful.setText("Please insert a sum");

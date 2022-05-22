@@ -112,6 +112,21 @@ public class Transfer {
 
     public boolean InvalidFields(){
         double sum;
+        if(field_FullName.getText().isEmpty()){
+            label_InsufficientFunds.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_InsufficientFunds.setText("Please insert the full name of the user you want to trasfer to.");
+            return true;
+        }
+        if(field_PID.getText().isEmpty()){
+            label_InsufficientFunds.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_InsufficientFunds.setText("Please insert the ID of the user you want to trasfer to.");
+            return true;
+        }
+        if(choice_Currency.getValue()==null){
+            label_InsufficientFunds.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_InsufficientFunds.setText("Please choose a currency");
+            return true;
+        }
         if(field_Amount.getText().isEmpty()){
             label_InsufficientFunds.setTextFill(Paint.valueOf("#bc1d1d"));//red
             label_InsufficientFunds.setText("Please insert a transfer amount.");

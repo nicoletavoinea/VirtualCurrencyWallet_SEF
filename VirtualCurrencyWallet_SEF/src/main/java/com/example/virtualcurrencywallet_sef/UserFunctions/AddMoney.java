@@ -94,6 +94,16 @@ public class AddMoney {
             label_successful.setText("Sum can contain only digits");
             return true;
         }
+        if(field_cardnumber.getText().isEmpty()){
+            label_invalidcredentials.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_invalidcredentials.setText("Please insert the card number");
+            return true;
+        }
+        if(field_pin.getText().isEmpty()){
+            label_invalidcredentials.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_invalidcredentials.setText("Please insert the pin");
+            return true;
+        }
         return false;
     }
 }
