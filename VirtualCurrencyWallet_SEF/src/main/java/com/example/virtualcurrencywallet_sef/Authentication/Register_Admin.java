@@ -33,7 +33,7 @@ public class Register_Admin {
     Button button_Register;
     @FXML
     Button button_Back;
-    
+
     private static final String ADMIN_PIN="100911";
 
     public Register_Admin(){}
