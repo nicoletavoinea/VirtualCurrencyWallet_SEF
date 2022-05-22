@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -72,6 +73,7 @@ public class Transfer {
         }
         if(i==jsonArray.size())
         {
+            label_InsufficientFunds.setTextFill(Paint.valueOf("#8a1919"));
             label_InsufficientFunds.setText("User not found");
             return;
         }
@@ -93,9 +95,11 @@ public class Transfer {
             sumsarray.set(j,sumsarray.get(j)+(sum*(1.0-c)));
             object.replace("sums",sumsarray);
             fileHandler.write(jsonArray);
+            label_InsufficientFunds.setTextFill(Paint.valueOf("#1eba27"));
             label_InsufficientFunds.setText("Transfer complete");
         }
         else{
+            label_InsufficientFunds.setTextFill(Paint.valueOf("#8a1919"));
             label_InsufficientFunds.setText("Insufficient funds");
         }
     }

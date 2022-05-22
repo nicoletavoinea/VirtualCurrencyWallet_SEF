@@ -61,12 +61,12 @@ public class AddMoney {
                 label_successful.setText("Money added successfully");
             }
             else{
-                label_successful.setText("Wrong PIN");
+                label_invalidcredentials.setText("Wrong card or PIN");
             }
         }
         else
         {
-            label_successful.setText("Wrong card number");
+            label_invalidcredentials.setText("Wrong card or PIN");
         }
     }
 }
