@@ -138,4 +138,6 @@ public class User {
     public String getUsername() {return username;}
     public void setPassword(String password) {this.password = Encryptor.encrypt(password,username);}
     public String getPassword() {return password;}
+    public void setSums(ArrayList<Double> sums) {this.sums = sums;}
+    public ArrayList<Double> getSums() {return sums;}
 }

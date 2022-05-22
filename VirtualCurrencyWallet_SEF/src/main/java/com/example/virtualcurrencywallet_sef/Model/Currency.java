@@ -5,9 +5,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-public class Currency {
-    private final String name;
+public class Currency extends ArrayList<Double> {
+    private String name;
     private double rate;
 
     public Currency(String name, double rate){
@@ -15,7 +16,18 @@ public class Currency {
         this.rate=rate;
     }
 
+    public  Currency(){
+        this.name=null;
+        this.rate=0.0;
+    }
+    public static Currency JSONtoCurrency(JSONObject jsonObject){
+        Currency currency=new Currency();
+        currency.name= (String) jsonObject.get("name");
+        currency.rate= (double) jsonObject.get("rate");
+        return currency;
+    }
 
+    public void setName(String name) {this.name = name;}
     public String getName(){return this.name;}
     public void setRate(double rate){this.rate=rate;}
     public double getRate(){return this.rate;}
