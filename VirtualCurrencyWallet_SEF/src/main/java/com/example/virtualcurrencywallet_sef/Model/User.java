@@ -37,7 +37,7 @@ public class User {
     }
 
 
-    public User(String fullname, String ID, String phonenumber, String adress, String cardnumber, String PIN, String username, String password) {
+    public User(String fullname, String ID, String phonenumber, String adress, String cardnumber, String PIN, String username, String password) throws IOException, ParseException {
         this.fullname = fullname;
         this.ID = ID;
         this.phonenumber = phonenumber;
@@ -47,7 +47,11 @@ public class User {
         this.username = username;
         this.password = Encryptor.encrypt(password,username);
         this.sums=new ArrayList<>();
-        sums.add(0.0);
+        FileHandler readcurrencies= new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        JSONArray currencies= readcurrencies.read();
+        for(int i=0;i<currencies.size();i++){
+            this.sums.add(0.0);
+        }
     }
 
     @Override
