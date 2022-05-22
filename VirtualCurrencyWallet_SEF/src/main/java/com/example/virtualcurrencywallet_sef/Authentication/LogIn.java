@@ -80,9 +80,10 @@ public class LogIn {
                 Main m=new Main();
                 m.changeScene("Menu_User.fxml");
             }
-            else{
-                label_loginerror.setText("Incorrect username or password");
-            }
+
+        }
+        else{
+            label_loginerror.setText("Incorrect username or password");
         }
 
     }
