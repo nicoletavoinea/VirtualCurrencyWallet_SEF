@@ -33,6 +33,8 @@ public class Register_Admin {
     Button button_Register;
     @FXML
     Button button_Back;
+    
+    private static final String ADMIN_PIN="100911";
 
     public Register_Admin(){}
 
@@ -94,6 +96,10 @@ public class Register_Admin {
         if(admin.isUnderage(field_ID.getText()))
         {
             label_Error.setText("Admin cannot be underage.");
+            return 0;
+        }
+        if(!field_AdminPIN.getText().equals(ADMIN_PIN)){
+            label_Error.setText("Wrong AdminPIN");
             return 0;
         }
         return 1;
