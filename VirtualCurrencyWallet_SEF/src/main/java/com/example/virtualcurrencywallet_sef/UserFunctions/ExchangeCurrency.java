@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -114,9 +115,11 @@ public class ExchangeCurrency {
             sumsarray.set(indexto,sumOfSecondCurrency);
             objectToReplace.replace("sums",sumsarray);
             fh.write(usersArray);
+            label_successful.setTextFill(Paint.valueOf("#1eba27"));
             label_successful.setText("Exchange completed successfully");
         }
         else{
+            label_successful.setTextFill(Paint.valueOf("#bc1d1d"));
             label_successful.setText("Insufficient funds in chosen currency");
         }
     }

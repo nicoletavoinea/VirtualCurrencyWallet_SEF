@@ -63,7 +63,7 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_loginerror" layoutX="637.0" layoutY="189.0" prefHeight="36.0" prefWidth="175.0" textFill="#8a1919">
+      <Label fx:id="label_loginerror" layoutX="514.0" layoutY="178.0" prefHeight="36.0" prefWidth="273.0" textAlignment="CENTER" textFill="#8a1919">
          <font>
             <Font name="Century Gothic Bold" size="15.0" />
          </font>

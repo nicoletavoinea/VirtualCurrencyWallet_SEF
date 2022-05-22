@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -41,10 +42,12 @@ public class ModifyExchangeRate {
                 object.replace("rate",Double.parseDouble(field_CurrencyRate.getText()));
                 fileHandler.write(currencies);
                 //currencies.set(i,object);
+                label_AlreadyExists.setTextFill(Paint.valueOf("#1eba27"));
                 label_AlreadyExists.setText("Rate changed successfully");
                 return;
             }
         }
+        label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));
         label_AlreadyExists.setText("Currency not found");
         return;
 

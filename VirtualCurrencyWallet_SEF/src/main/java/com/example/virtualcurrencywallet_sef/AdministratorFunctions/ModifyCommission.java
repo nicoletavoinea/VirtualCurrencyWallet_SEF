@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Paint;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
@@ -41,7 +42,9 @@ public class ModifyCommission {
         JSONObject commission= (JSONObject) jsonArray.get(0);
         commission.replace("commission",Double.parseDouble(field_NewCommission.getText())/100);
         fileHandler.write(jsonArray);
+        label_CommissionModified.setTextFill(Paint.valueOf("#1eba27"));
         label_CommissionModified.setText("Commission modified");
+        label_CurrentCommission.setText("Current commission: " + (Double)commission.get("commission")*100 + "%");
     }
 
     @FXML
