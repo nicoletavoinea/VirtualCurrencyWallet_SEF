@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -27,6 +28,8 @@ public class Main extends Application {
         primarystage.setResizable(false);
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("LogIn.fxml")));
         primarystage.setTitle("Virtual Currency Wallet");
+        Image icon = new Image("file:src/main/resources/com/example/virtualcurrencywallet_sef/Images/Wallet.png");
+        primarystage.getIcons().add(icon);
         primarystage.setScene(new Scene(root, 900,700));
         primarystage.show();
     }
