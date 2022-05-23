@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.IOException;
 import java.math.BigInteger;
 
@@ -46,7 +47,8 @@ public class Register_User {
     public void register(ActionEvent event) throws Exception{
         if(checkInvalidFields()==0){
             FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
-            JSONArray jsonArray=fileHandler.read();
+
+            JSONArray jsonArray = fileHandler.read();
             User user=new User(field_FullName.getText(),field_ID.getText(),field_PhoneNumber.getText(),field_HomeAdress.getText(),field_CardNumber.getText(),field_PIN.getText(),field_Username.getText(),field_Password.getText());
             jsonArray.add(user.userJSON());
             fileHandler.write(jsonArray);

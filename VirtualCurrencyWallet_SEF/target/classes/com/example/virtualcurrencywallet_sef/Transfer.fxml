@@ -84,7 +84,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="label_InsufficientFunds" alignment="CENTER" layoutX="285.0" layoutY="431.0" prefHeight="52.0" prefWidth="332.0" textAlignment="CENTER" textFill="#1eba27">
+      <Label fx:id="label_InsufficientFunds" alignment="CENTER" layoutX="178.0" layoutY="431.0" prefHeight="52.0" prefWidth="562.0" textAlignment="CENTER" textFill="#1eba27">
          <font>
             <Font name="Century Gothic Bold" size="24.0" />
          </font>

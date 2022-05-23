@@ -9,7 +9,7 @@ public class Comission {
 
     public JSONObject commissionJSON(){
         JSONObject object=new JSONObject();
-        object.put("comission",commission);
+        object.put("commission",commission);
         return object;
     }
 
