@@ -43,7 +43,6 @@ public class AddMoney {
     @FXML
     private void add(ActionEvent event) throws IOException, ParseException {
         if(!InvalidFields()) {
-
             User user = new User();
             FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
             JSONArray jsonArray = fileHandler.read();
@@ -94,6 +93,8 @@ public class AddMoney {
             label_successful.setText("Sum can contain only digits");
             return true;
         }
+        label_successful.setTextFill(Paint.valueOf("#1eba27"));//green
+        label_successful.setText("");
         if(field_cardnumber.getText().isEmpty()){
             label_invalidcredentials.setTextFill(Paint.valueOf("#bc1d1d"));//red
             label_invalidcredentials.setText("Please insert the card number");

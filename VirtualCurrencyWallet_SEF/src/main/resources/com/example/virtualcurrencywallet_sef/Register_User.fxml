@@ -133,7 +133,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="label_Error" alignment="CENTER" contentDisplay="CENTER" layoutX="449.0" layoutY="153.0" prefHeight="39.0" prefWidth="402.0" textAlignment="CENTER" textFill="#8a1919">
+      <Label fx:id="label_Error" alignment="CENTER" contentDisplay="CENTER" layoutX="361.0" layoutY="140.0" prefHeight="52.0" prefWidth="525.0" textAlignment="CENTER" textFill="#8a1919" wrapText="true">
          <font>
             <Font name="Century Gothic Bold" size="16.0" />
          </font>
