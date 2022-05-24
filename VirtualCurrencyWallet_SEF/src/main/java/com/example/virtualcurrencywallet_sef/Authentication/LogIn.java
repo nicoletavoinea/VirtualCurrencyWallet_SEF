@@ -31,7 +31,7 @@ public class LogIn {
 
     public void initialize() throws IOException, ParseException {
         //if the databse is empty add default commision and currency
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
+        FileHandler fileHandler=new FileHandler("Commission.json");
         JSONArray jsonArray= fileHandler.read();
         JSONObject jsonObject;
         if(jsonArray.size()==0){
@@ -40,7 +40,7 @@ public class LogIn {
             jsonArray.add(jsonObject);
             fileHandler.write(jsonArray);
         }
-        fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        fileHandler=new FileHandler("Currencies.json");
         jsonArray= fileHandler.read();
         if(jsonArray.size()==0){
             Currency currency=new Currency("Euro",1.0);
@@ -84,7 +84,7 @@ public class LogIn {
 
     public void logInUser() throws IOException, ParseException {
         User user=new User();
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+        FileHandler fileHandler=new FileHandler("Users.json");
         JSONArray jsonArray=fileHandler.read();
 
         int userPosition=user.usernameExists(field_username.getText());
@@ -109,7 +109,7 @@ public class LogIn {
     }
     public void logInAdmin() throws IOException, ParseException {
         Admin admin=new Admin();
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Admins.json");
+        FileHandler fileHandler=new FileHandler("Admins.json");
         JSONArray jsonArray=fileHandler.read();
 
 

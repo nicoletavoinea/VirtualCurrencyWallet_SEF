@@ -1,0 +1,1 @@
+java -jar VirtualCurrencyWallet_SEF.jar

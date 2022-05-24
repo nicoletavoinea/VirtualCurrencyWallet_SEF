@@ -44,7 +44,7 @@ public class ViewWallet {
     }
 
     public void initialize() throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        FileHandler fileHandler=new FileHandler("Currencies.json");
         JSONArray currenciesArray =fileHandler.read();
         ArrayList<Currency> currencies=new ArrayList<>();
 

@@ -41,7 +41,7 @@ public class ExchangeCurrency {
     public void initialize() throws IOException, ParseException {
         //setting items in choice boxes
 
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        FileHandler fileHandler=new FileHandler("Currencies.json");
         JSONArray currenciesArray=fileHandler.read();
         ArrayList<String> availableCurrencies=new ArrayList<>();
         ArrayList<String> allCurrencies=new ArrayList<>();
@@ -75,7 +75,7 @@ public class ExchangeCurrency {
     private void exchange(ActionEvent event) throws IOException, ParseException {
         if(!InvalidFields()) {
 
-            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+            FileHandler fileHandler = new FileHandler("Currencies.json");
             JSONArray currenciesArray = fileHandler.read();
             Holder holder = Holder.getInstance();
             JSONObject objectH = holder.get();
@@ -96,11 +96,11 @@ public class ExchangeCurrency {
 
 
             //get commission
-            FileHandler cms = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
+            FileHandler cms = new FileHandler("Commission.json");
             JSONArray commissionObject = cms.read();
             double commission = (double) ((JSONObject) commissionObject.get(0)).get("commission");
 
-            FileHandler fh = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+            FileHandler fh = new FileHandler("Users.json");
             JSONArray usersArray = fh.read();
             User user = new User();
             int userposition = user.usernameExists((String) objectH.get("username"));

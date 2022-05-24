@@ -43,7 +43,7 @@ public class Register_Admin {
     @FXML
     public void register(ActionEvent event) throws Exception{
         if(checkInvalidFields()==0){
-            FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Admins.json");
+            FileHandler fileHandler=new FileHandler("Admins.json");
             JSONArray admins= fileHandler.read();
             Admin newadmin= new Admin(field_FullName.getText(),field_ID.getText(),field_PhoneNumber.getText(),field_Username.getText(),field_Password.getText(),field_AdminPIN.getText());
             admins.add(newadmin.adminJSON());

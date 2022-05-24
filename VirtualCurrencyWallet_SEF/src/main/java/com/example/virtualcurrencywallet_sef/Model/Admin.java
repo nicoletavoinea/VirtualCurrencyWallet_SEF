@@ -123,7 +123,7 @@ public class Admin {
     }
 
     public int adminExists(String username)throws ParseException, IOException {
-        FileHandler fileHandler= new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Admins.json");
+        FileHandler fileHandler= new FileHandler("Admins.json");
         JSONArray jsonArray=fileHandler.read();
         for(int i=0;i<jsonArray.size();i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);

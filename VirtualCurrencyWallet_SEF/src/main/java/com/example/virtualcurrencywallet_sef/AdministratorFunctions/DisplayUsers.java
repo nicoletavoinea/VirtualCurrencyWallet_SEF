@@ -45,7 +45,7 @@ public class DisplayUsers {
         ID.setCellValueFactory(new PropertyValueFactory<User,String>("ID"));
         phonenumber.setCellValueFactory(new PropertyValueFactory<User,String>("phonenumber"));
         adress.setCellValueFactory(new PropertyValueFactory<User,String>("adress"));
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+        FileHandler fileHandler=new FileHandler("Users.json");
         JSONArray JSONusers=fileHandler.read();
         for (int i=0;i<JSONusers.size();i++) {
             JSONObject user= (JSONObject) JSONusers.get(i);

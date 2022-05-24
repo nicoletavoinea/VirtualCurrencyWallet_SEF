@@ -33,7 +33,7 @@ public class ModifyExchangeRate {
     @FXML
     public void modifyRate(ActionEvent event) throws IOException, ParseException {
         if(!InvalidFields()) {
-            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+            FileHandler fileHandler = new FileHandler("Currencies.json");
             JSONArray currencies = fileHandler.read();
             for (int i = 0; i < currencies.size(); i++) {
                 JSONObject object = (JSONObject) currencies.get(i);

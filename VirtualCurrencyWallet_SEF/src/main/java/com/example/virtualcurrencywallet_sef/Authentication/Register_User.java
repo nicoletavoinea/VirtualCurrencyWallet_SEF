@@ -46,7 +46,7 @@ public class Register_User {
     @FXML
     public void register(ActionEvent event) throws Exception{
         if(checkInvalidFields()==0){
-            FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+            FileHandler fileHandler=new FileHandler("Users.json");
 
             JSONArray jsonArray = fileHandler.read();
             User user=new User(field_FullName.getText(),field_ID.getText(),field_PhoneNumber.getText(),field_HomeAdress.getText(),field_CardNumber.getText(),field_PIN.getText(),field_Username.getText(),field_Password.getText());
