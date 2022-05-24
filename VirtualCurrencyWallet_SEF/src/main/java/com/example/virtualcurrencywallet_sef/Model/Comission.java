@@ -12,5 +12,4 @@ public class Comission {
         object.put("commission",commission);
         return object;
     }
-
 }

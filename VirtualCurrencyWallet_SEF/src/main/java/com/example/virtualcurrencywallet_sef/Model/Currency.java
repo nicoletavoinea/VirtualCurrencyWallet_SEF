@@ -11,19 +11,32 @@ public class Currency {
     private String name;
     private double rate;
 
-    /*public  Currency(){
-        this.name=null;
-        this.rate=null;
-    }*/
+    public boolean equals(Object o){
+        if(o instanceof Currency)
+        {
+            if (((Currency)o).name.equals(this.name))
+                if(((Currency) o).rate==this.rate)
+                    return true;
+        }
+        return false;
+    }
+
     public Currency(String name, double rate){
         this.name=name;
         this.rate=rate;
     }
-
     public  Currency(){
         this.name=null;
         this.rate=0.0;
     }
+
+    public JSONObject currencyJSON(){
+        JSONObject object=new JSONObject();
+        object.put("name",this.name);
+        object.put("rate",this.rate);
+        return object;
+    }
+
     public static Currency JSONtoCurrency(JSONObject jsonObject){
         Currency currency=new Currency();
         currency.name= (String) jsonObject.get("name");
@@ -36,19 +49,6 @@ public class Currency {
     public void setRate(double rate){this.rate=rate;}
     public double getRate(){return this.rate;}
 
-    public JSONObject currencyJSON(){
-        JSONObject object=new JSONObject();
-        object.put("name",this.name);
-        object.put("rate",this.rate);
-        return object;
-    }
-
-   /* public static Currency JSONtoCurrency(JSONObject jsonObject){
-        Currency currency=new Currency();
-        currency.name=jsonObject.get("name");
-        currency.rate=jsonObject.get("rate");
-        return currency;
-    }*/
 
     public int alreadyExists(String name) throws IOException, ParseException {
         FileHandler fileHandler=new FileHandler("Currencies.json");
