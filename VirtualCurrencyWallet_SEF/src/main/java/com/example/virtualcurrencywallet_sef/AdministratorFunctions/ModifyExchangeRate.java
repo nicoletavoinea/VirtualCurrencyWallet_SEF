@@ -32,25 +32,55 @@ public class ModifyExchangeRate {
 
     @FXML
     public void modifyRate(ActionEvent event) throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
-        JSONArray currencies=fileHandler.read();
-        for(int i=0; i<currencies.size();i++)
-        {
-            JSONObject object= (JSONObject) currencies.get(i);
-            if(field_CurrencyName.getText().equals(object.get("name")))
-            {
-                object.replace("rate",Double.parseDouble(field_CurrencyRate.getText()));
-                fileHandler.write(currencies);
-                //currencies.set(i,object);
-                label_AlreadyExists.setTextFill(Paint.valueOf("#1eba27"));
-                label_AlreadyExists.setText("Rate changed successfully");
-                return;
+        if(!InvalidFields()) {
+            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+            JSONArray currencies = fileHandler.read();
+            for (int i = 0; i < currencies.size(); i++) {
+                JSONObject object = (JSONObject) currencies.get(i);
+                if (field_CurrencyName.getText().equals(object.get("name"))) {
+                    object.replace("rate", Double.parseDouble(field_CurrencyRate.getText()));
+                    fileHandler.write(currencies);
+                    //currencies.set(i,object);
+                    label_AlreadyExists.setTextFill(Paint.valueOf("#1eba27"));
+                    label_AlreadyExists.setText("Rate changed successfully");
+                    return;
+                }
             }
         }
-        label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));
-        label_AlreadyExists.setText("Currency not found");
-        return;
 
+    }
+
+    public boolean InvalidFields() throws IOException, ParseException {
+        double rate;
+        if(field_CurrencyName.getText().isEmpty()){
+            label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));
+            label_AlreadyExists.setText("Please insert the name of the currency.");
+            return true;
+        }
+        if(field_CurrencyRate.getText().isEmpty()){
+            label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_AlreadyExists.setText("Please insert the new rate.");
+            return true;
+        }
+        else try{
+            rate=Double.parseDouble(field_CurrencyRate.getText());
+            if(rate<0){
+                label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));//red
+                label_AlreadyExists.setText("Rate can't be a negative number");
+                return true;
+            }
+        }catch (NumberFormatException e){
+            label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_AlreadyExists.setText("Rate can contain only digits");
+            return true;
+        }
+        Currency newcurrency=new Currency(field_CurrencyName.getText(),Double.parseDouble(field_CurrencyRate.getText()));
+        if(newcurrency.alreadyExists(field_CurrencyName.getText())==-1) {
+            label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));
+            label_AlreadyExists.setText("Currency does not exist");
+            return true;
+        }
+        return false;
     }
 
     @FXML

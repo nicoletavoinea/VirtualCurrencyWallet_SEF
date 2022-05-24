@@ -8,11 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.AdministratorFunctions.ModifyExchangeRate">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.AdministratorFunctions.ModifyExchangeRate">
    <children>
+      <ImageView fitHeight="966.0" fitWidth="1420.0" layoutX="-500.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/background2.jpg" />
+         </image>
+      </ImageView>
       <Button fx:id="button_Back" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <ImageView fitHeight="113.0" fitWidth="102.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
@@ -35,36 +40,37 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="421.0" text="modify exchange rate" textFill="#141878">
+      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="421.0" text="Modify exchange rate" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="258.0" prefHeight="39.0" prefWidth="186.0" text="Currency name" textFill="#141878">
+      <Label layoutX="190.0" layoutY="231.0" prefHeight="75.0" prefWidth="250.0" text="Currency name" textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="311.0" prefHeight="39.0" prefWidth="175.0" text="New exchange rate:" textFill="#141878">
+      <Label layoutX="188.0" layoutY="314.0" prefHeight="75.0" prefWidth="250.0" text="New exchange rate:" textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="field_CurrencyName" layoutX="458.0" layoutY="265.0" prefHeight="25.0" prefWidth="186.0" promptText="name" />
-      <TextField fx:id="field_CurrencyRate" layoutX="458.0" layoutY="318.0" prefHeight="25.0" prefWidth="186.0" promptText="rate" />
-      <Button fx:id="button_ModifyRate" layoutX="358.0" layoutY="419.0" mnemonicParsing="false" onAction="#modifyRate" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Modify rate" textFill="WHITE">
+      <TextField fx:id="field_CurrencyName" layoutX="462.0" layoutY="239.0" prefHeight="60.0" prefWidth="250.0" promptText="name">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="22.0" />
+         </font></TextField>
+      <TextField fx:id="field_CurrencyRate" layoutX="462.0" layoutY="322.0" prefHeight="60.0" prefWidth="250.0" promptText="rate">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></TextField>
+      <Button fx:id="button_ModifyRate" layoutX="353.0" layoutY="496.0" mnemonicParsing="false" onAction="#modifyRate" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Modify rate" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="label_InsufficientFunds" alignment="TOP_CENTER" layoutX="358.0" layoutY="366.0" prefHeight="39.0" prefWidth="186.0" textAlignment="CENTER" textFill="#1eba27">
+      <Label fx:id="label_AlreadyExists" alignment="CENTER" layoutX="237.0" layoutY="413.0" prefHeight="60.0" prefWidth="406.0" textAlignment="CENTER" textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="15.0" />
-         </font>
-      </Label>
-      <Label fx:id="label_AlreadyExists" alignment="CENTER" layoutX="294.0" layoutY="366.0" prefHeight="39.0" prefWidth="302.0" textAlignment="CENTER" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="Century Gothic Bold" size="22.0" />
          </font>
       </Label>
    </children>

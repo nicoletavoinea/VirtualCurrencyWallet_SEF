@@ -9,14 +9,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.Authentication.Register_User">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.Authentication.Register_User">
    <children>
+      <ImageView fitHeight="966.0" fitWidth="1420.0" layoutX="-500.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/background2.jpg" />
+         </image>
+      </ImageView>
       <ImageView fitHeight="165.0" fitWidth="161.0" layoutX="78.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Images/Wallet.png" />
          </image>
       </ImageView>
-      <Label graphicTextGap="0.0" layoutX="116.0" layoutY="189.0" prefHeight="88.0" prefWidth="224.0" text="create   your" textFill="#141878">
+      <Label alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="116.0" layoutY="235.0" prefHeight="69.0" prefWidth="224.0" text="Create your" textAlignment="CENTER" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
@@ -36,7 +41,7 @@
             <Font name="Century Gothic Bold" size="30.0" />
          </font>
       </Label>
-      <Label graphicTextGap="0.0" layoutX="153.0" layoutY="498.0" prefHeight="88.0" prefWidth="150.0" text="account" textAlignment="CENTER" textFill="#141878">
+      <Label graphicTextGap="0.0" layoutX="153.0" layoutY="481.0" prefHeight="69.0" prefWidth="150.0" text="Account" textAlignment="CENTER" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
@@ -86,27 +91,51 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="field_PhoneNumber" layoutX="600.0" layoutY="307.0" prefHeight="24.0" prefWidth="257.0" promptText="Your phone number" />
-      <TextField fx:id="field_HomeAdress" layoutX="600.0" layoutY="362.0" prefHeight="24.0" prefWidth="257.0" promptText="Your home adress" />
-      <TextField fx:id="field_ID" layoutX="600.0" layoutY="257.0" prefHeight="24.0" prefWidth="257.0" promptText="Your personal ID" />
-      <TextField fx:id="field_FullName" layoutX="600.0" layoutY="207.0" prefHeight="24.0" prefWidth="257.0" promptText="Your full name" />
-      <TextField fx:id="field_CardNumber" layoutX="600.0" layoutY="412.0" prefHeight="24.0" prefWidth="257.0" promptText="Your card number" />
-      <TextField fx:id="field_Username" layoutX="600.0" layoutY="512.0" prefHeight="24.0" prefWidth="257.0" promptText="Username" />
-      <PasswordField fx:id="field_PIN" layoutX="600.0" layoutY="461.0" prefHeight="25.0" prefWidth="257.0" promptText="Your PIN" />
-      <PasswordField fx:id="field_Password" layoutX="600.0" layoutY="563.0" prefHeight="25.0" prefWidth="257.0" promptText="Password" />
+      <TextField fx:id="field_PhoneNumber" layoutX="600.0" layoutY="307.0" prefHeight="24.0" prefWidth="257.0" promptText="Your phone number">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="field_HomeAdress" layoutX="600.0" layoutY="362.0" prefHeight="24.0" prefWidth="257.0" promptText="Your home adress">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="field_ID" layoutX="600.0" layoutY="257.0" prefHeight="24.0" prefWidth="257.0" promptText="Your personal ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="field_FullName" layoutX="600.0" layoutY="207.0" prefHeight="24.0" prefWidth="257.0" promptText="Your full name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="field_CardNumber" layoutX="600.0" layoutY="412.0" prefHeight="24.0" prefWidth="257.0" promptText="Your card number">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="field_Username" layoutX="600.0" layoutY="512.0" prefHeight="24.0" prefWidth="257.0" promptText="Username">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <PasswordField fx:id="field_PIN" layoutX="600.0" layoutY="461.0" prefHeight="25.0" prefWidth="257.0" promptText="Your PIN">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></PasswordField>
+      <PasswordField fx:id="field_Password" layoutX="600.0" layoutY="563.0" prefHeight="25.0" prefWidth="257.0" promptText="Password">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></PasswordField>
       <Button fx:id="button_Register" layoutX="682.0" layoutY="626.0" mnemonicParsing="false" onAction="#register" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Register" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <Button fx:id="button_Back" layoutX="450.0" layoutY="626.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="label_Error" layoutX="478.0" layoutY="150.0" prefHeight="39.0" prefWidth="294.0" textFill="#8a1919">
+      <Label fx:id="label_Error" alignment="CENTER" contentDisplay="CENTER" layoutX="361.0" layoutY="140.0" prefHeight="52.0" prefWidth="525.0" textAlignment="CENTER" textFill="#8a1919" wrapText="true">
          <font>
-            <Font name="Century Gothic Bold" size="14.0" />
+            <Font name="Century Gothic Bold" size="16.0" />
          </font>
       </Label>
    </children>

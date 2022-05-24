@@ -35,29 +35,61 @@ public class AddNewCurrency {
 
     @FXML
     public void addCurrency(ActionEvent event) throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
-        JSONArray currencies=fileHandler.read();
+        if (!InvalidFields()) {
+            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+            JSONArray currencies = fileHandler.read();
+            Currency newcurrency = new Currency(field_CurrencyName.getText(), Double.parseDouble(field_CurrencyRate.getText()));
+
+            currencies.add(newcurrency.currencyJSON());
+            fileHandler.write(currencies);
+            fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+            JSONArray users = fileHandler.read();
+            for (int i = 0; i < users.size(); i++) {
+                JSONObject user = (JSONObject) users.get(i);
+                ArrayList<Double> sums = new ArrayList<>();
+                sums = (ArrayList<Double>) user.get("sums");
+                sums.add(0.0);
+                user.replace("sums", sums);
+            }
+            fileHandler.write(users);
+            label_AlreadyExists.setTextFill(Paint.valueOf("#1eba27"));
+            label_AlreadyExists.setText("Successfuly added.");
+        }
+
+    }
+
+    public boolean InvalidFields() throws IOException, ParseException {
+        double rate;
+        if(field_CurrencyName.getText().isEmpty()){
+            label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));
+            label_AlreadyExists.setText("Please insert the name of the currency.");
+            return true;
+        }
+        if(field_CurrencyRate.getText().isEmpty()){
+            label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_AlreadyExists.setText("Please insert the rate.");
+            return true;
+        }
+        else try{
+            rate=Double.parseDouble(field_CurrencyRate.getText());
+            if(rate<0){
+                label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));//red
+                label_AlreadyExists.setText("Rate can't be a negative number");
+                return true;
+            }
+        }catch (NumberFormatException e){
+            label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_AlreadyExists.setText("Rate can contain only digits");
+            return true;
+        }
         Currency newcurrency=new Currency(field_CurrencyName.getText(),Double.parseDouble(field_CurrencyRate.getText()));
         if(newcurrency.alreadyExists(field_CurrencyName.getText())!=-1) {
             label_AlreadyExists.setTextFill(Paint.valueOf("#bc1d1d"));
             label_AlreadyExists.setText("Currency already exists!");
+            return true;
         }
-        else {
-            currencies.add(newcurrency.currencyJSON());
-            fileHandler.write(currencies);
-            label_AlreadyExists.setTextFill(Paint.valueOf("#1eba27"));
-            label_AlreadyExists.setText("Successful");
-            fileHandler= new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
-            JSONArray users=fileHandler.read();
-            for(int i=0;i<users.size();i++){
-                JSONObject user= (JSONObject) users.get(i);
-                ArrayList<Double> sums=new ArrayList<>();
-                sums= (ArrayList<Double>) user.get("sums");
-                sums.add(0.0);
-                user.replace("sums",sums);
-            }
-            fileHandler.write(users);
-        }
+
+        return false;
     }
 
     @FXML

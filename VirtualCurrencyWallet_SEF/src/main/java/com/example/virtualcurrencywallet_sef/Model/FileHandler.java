@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,6 +21,10 @@ public class FileHandler {
 
     public JSONArray read() throws IOException, ParseException {
         JSONParser jsonParser=new JSONParser();
+        File file=new File(this.path);
+
+        if(file.length()==0) return new JSONArray();
+
         FileReader fileReader=new FileReader(this.path);
         Scanner scanner = new Scanner(fileReader);
         Object object = jsonParser.parse(fileReader);
@@ -39,5 +44,7 @@ public class FileHandler {
         fw.flush();
         fw.close();
     }
+
+
 
 }

@@ -12,6 +12,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.IOException;
 
 public class LogIn {
@@ -28,7 +29,25 @@ public class LogIn {
     @FXML
     private Button button_RegisterAdmin;
 
-    public LogIn(){
+    public void initialize() throws IOException, ParseException {
+        //if the databse is empty add default commision and currency
+        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
+        JSONArray jsonArray= fileHandler.read();
+        JSONObject jsonObject;
+        if(jsonArray.size()==0){
+            Comission comission=new Comission(0.01);
+            jsonObject=comission.commissionJSON();
+            jsonArray.add(jsonObject);
+            fileHandler.write(jsonArray);
+        }
+        fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        jsonArray= fileHandler.read();
+        if(jsonArray.size()==0){
+            Currency currency=new Currency("Euro",1.0);
+            jsonObject=currency.currencyJSON();
+            jsonArray.add(jsonObject);
+            fileHandler.write(jsonArray);
+        }
     }
 
     @FXML
@@ -37,8 +56,6 @@ public class LogIn {
             logInUser();
             logInAdmin();
         }
-
-
     }
 
     @FXML
@@ -80,6 +97,9 @@ public class LogIn {
                 Main m=new Main();
                 m.changeScene("Menu_User.fxml");
             }
+            else{
+                label_loginerror.setText("Incorrect username or password");
+            }
 
         }
         else{
@@ -97,6 +117,8 @@ public class LogIn {
         if(adminPosition!=-1){
             JSONObject jsonObject= (JSONObject) jsonArray.get(adminPosition);
             if(Encryptor.verify(field_password.getText(),(String)jsonObject.get("password"),(String)jsonObject.get("username"))){
+                Holder holder=Holder.getInstance();
+                holder.set(jsonObject);
                 Main m=new Main();
                 m.changeScene("Menu_Admin.fxml");
             }

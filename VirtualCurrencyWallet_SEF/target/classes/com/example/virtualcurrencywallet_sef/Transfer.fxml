@@ -9,11 +9,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.UserFunctions.Transfer">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.UserFunctions.Transfer">
    <children>
+      <ImageView fitHeight="966.0" fitWidth="1420.0" layoutX="-500.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/background2.jpg" />
+         </image>
+      </ImageView>
       <Button fx:id="button_Back" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <ImageView fitHeight="113.0" fitWidth="102.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
@@ -36,43 +41,52 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="349.0" text="transfer   to   user" textFill="#141878">
+      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="249.0" layoutY="41.0" prefHeight="88.0" prefWidth="349.0" text="Transfer to user" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
       </Label>
-      <Label layoutX="81.0" layoutY="258.0" prefHeight="39.0" prefWidth="158.0" text="User's full name:" textFill="#141878">
+      <Label layoutX="78.0" layoutY="288.0" prefHeight="52.0" prefWidth="186.0" text="User's full name:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="78.0" layoutY="360.0" prefHeight="52.0" prefWidth="186.0" text="User's personal ID:" textFill="#141878">
+         <font>
+            <Font name="Century Gothic Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="field_FullName" layoutX="264.0" layoutY="288.0" prefHeight="52.0" prefWidth="195.0" promptText="name">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></TextField>
+      <TextField fx:id="field_PID" layoutX="264.0" layoutY="360.0" prefHeight="52.0" prefWidth="195.0" promptText="PID">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></TextField>
+      <Label layoutX="500.0" layoutY="288.0" prefHeight="52.0" prefWidth="102.0" text="Currency:" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="81.0" layoutY="311.0" prefHeight="39.0" prefWidth="164.0" text="User's personal ID:" textFill="#141878">
+      <ChoiceBox fx:id="choice_Currency" layoutX="602.0" layoutY="288.0" prefHeight="52.0" prefWidth="150.0" />
+      <Label layoutX="500.0" layoutY="360.0" prefHeight="52.0" prefWidth="150.0" text="Transfer amount:" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="field_FullName" layoutX="252.0" layoutY="265.0" prefHeight="25.0" prefWidth="186.0" promptText="name" />
-      <TextField fx:id="field_PID" layoutX="252.0" layoutY="318.0" prefHeight="25.0" prefWidth="186.0" promptText="PID" />
-      <Label layoutX="480.0" layoutY="258.0" prefHeight="39.0" prefWidth="96.0" text="Currency:" textFill="#141878">
+      <TextField fx:id="field_Amount" layoutX="650.0" layoutY="360.0" prefHeight="52.0" prefWidth="175.0" promptText="amount">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="choice_Currency" layoutX="576.0" layoutY="265.0" prefWidth="150.0" />
-      <Label layoutX="480.0" layoutY="311.0" prefHeight="39.0" prefWidth="150.0" text="Transfer amount:" textFill="#141878">
+            <Font name="System Bold" size="18.0" />
+         </font></TextField>
+      <Button fx:id="button_Transfer" layoutX="363.0" layoutY="517.0" mnemonicParsing="false" onAction="#transfer" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Transfer" textFill="WHITE">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="field_Amount" layoutX="633.0" layoutY="318.0" prefHeight="25.0" prefWidth="186.0" promptText="amount" />
-      <Button fx:id="button_Transfer" layoutX="363.0" layoutY="422.0" mnemonicParsing="false" onAction="#transfer" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Transfer" textFill="WHITE">
-         <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="label_InsufficientFunds" alignment="TOP_CENTER" layoutX="358.0" layoutY="366.0" prefHeight="39.0" prefWidth="186.0" textAlignment="CENTER" textFill="#1eba27">
+      <Label fx:id="label_InsufficientFunds" alignment="CENTER" layoutX="72.0" layoutY="431.0" prefHeight="52.0" prefWidth="757.0" textAlignment="CENTER" textFill="#1eba27">
          <font>
-            <Font name="Century Gothic Bold" size="15.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
    </children>

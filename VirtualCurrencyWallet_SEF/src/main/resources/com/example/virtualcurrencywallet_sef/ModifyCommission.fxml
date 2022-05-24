@@ -8,11 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.AdministratorFunctions.ModifyCommission">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.virtualcurrencywallet_sef.AdministratorFunctions.ModifyCommission">
    <children>
+      <ImageView fitHeight="966.0" fitWidth="1420.0" layoutX="-500.0" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/background2.jpg" />
+         </image>
+      </ImageView>
       <Button fx:id="button_Back" layoutX="22.0" layoutY="634.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="175.0" style="-fx-background-color: #141878;" text="Back" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
       <ImageView fitHeight="113.0" fitWidth="102.0" layoutX="22.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
@@ -35,40 +40,38 @@
             <Font name="Century Gothic Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="250.0" layoutY="41.0" prefHeight="88.0" prefWidth="421.0" text="modify comission" textFill="#141878">
+      <Label fx:id="label_welcome" graphicTextGap="0.0" layoutX="250.0" layoutY="41.0" prefHeight="88.0" prefWidth="421.0" text="Modify commission" textFill="#141878">
          <font>
             <Font name="Century Gothic Bold" size="34.0" />
          </font>
       </Label>
-      <Label fx:id="label_CurrentCommission" layoutX="259.0" layoutY="258.0" prefHeight="39.0" prefWidth="385.0" text="Current commision: " textFill="#141878">
+      <Label fx:id="label_CurrentCommission" layoutX="225.0" layoutY="245.0" prefHeight="75.0" prefWidth="450.0" text="Current commision: " textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="259.0" layoutY="311.0" prefHeight="39.0" prefWidth="175.0" text="New comission:" textFill="#141878">
+      <Label layoutX="225.0" layoutY="334.0" prefHeight="75.0" prefWidth="226.0" text="New comission:" textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="field_NewCommission" layoutX="458.0" layoutY="318.0" prefHeight="25.0" prefWidth="186.0" promptText="commission" />
-      <Button fx:id="button_ModifyCommission" layoutX="347.0" layoutY="419.0" mnemonicParsing="false" onAction="#modifyCommission" prefHeight="39.0" prefWidth="210.0" style="-fx-background-color: #141878;" text="Modify commission" textFill="WHITE">
+      <TextField fx:id="field_NewCommission" layoutX="451.0" layoutY="341.0" prefHeight="60.0" prefWidth="186.0" promptText="commission">
          <font>
-            <Font size="18.0" />
+            <Font name="System Bold" size="22.0" />
+         </font></TextField>
+      <Button fx:id="button_ModifyCommission" layoutX="346.0" layoutY="522.0" mnemonicParsing="false" onAction="#modifyCommission" prefHeight="39.0" prefWidth="210.0" style="-fx-background-color: #141878;" text="Modify commission" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="label_InsufficientFunds" alignment="TOP_CENTER" layoutX="358.0" layoutY="366.0" prefHeight="39.0" prefWidth="186.0" textAlignment="CENTER" textFill="#1eba27">
+      <Label fx:id="label_CommissionModified" alignment="CENTER" layoutX="236.0" layoutY="429.0" prefHeight="75.0" prefWidth="450.0" textAlignment="CENTER" textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="15.0" />
+            <Font name="Century Gothic Bold" size="22.0" />
          </font>
       </Label>
-      <Label fx:id="label_CommissionModified" alignment="CENTER" layoutX="318.0" layoutY="366.0" prefHeight="39.0" prefWidth="265.0" textAlignment="CENTER" textFill="#141878">
+      <Label layoutX="655.0" layoutY="332.0" prefHeight="75.0" prefWidth="41.0" text="\%" textFill="#141878">
          <font>
-            <Font name="Century Gothic Bold" size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="655.0" layoutY="311.0" prefHeight="39.0" prefWidth="22.0" text="\%" textFill="#141878">
-         <font>
-            <Font name="Century Gothic Bold" size="18.0" />
+            <Font name="Century Gothic Bold" size="24.0" />
          </font>
       </Label>
    </children>

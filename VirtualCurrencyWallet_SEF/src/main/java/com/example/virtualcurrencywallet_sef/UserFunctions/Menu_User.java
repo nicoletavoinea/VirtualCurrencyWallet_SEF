@@ -1,10 +1,12 @@
 package com.example.virtualcurrencywallet_sef.UserFunctions;
 
 import com.example.virtualcurrencywallet_sef.Main;
+import com.example.virtualcurrencywallet_sef.Model.Holder;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import org.json.simple.JSONObject;
 
 import java.io.IOException;
 
@@ -24,6 +26,13 @@ public class Menu_User {
     private Button button_view;
 
     public Menu_User(){
+    }
+
+    public void initialize(){
+        Holder holder=Holder.getInstance();
+        JSONObject user=holder.get();
+        String name= (String) user.get("fullname");
+        label_welcome.setText("Welcome, "+name);
     }
 
     @FXML

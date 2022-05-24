@@ -1,6 +1,7 @@
 package com.example.virtualcurrencywallet_sef.AdministratorFunctions;
 
 import com.example.virtualcurrencywallet_sef.Main;
+import com.example.virtualcurrencywallet_sef.Model.Currency;
 import com.example.virtualcurrencywallet_sef.Model.FileHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,14 +38,44 @@ public class ModifyCommission {
     }
     @FXML
     public void modifyCommission(ActionEvent event)throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
-        JSONArray jsonArray=fileHandler.read();
-        JSONObject commission= (JSONObject) jsonArray.get(0);
-        commission.replace("commission",Double.parseDouble(field_NewCommission.getText())/100);
-        fileHandler.write(jsonArray);
-        label_CommissionModified.setTextFill(Paint.valueOf("#1eba27"));
-        label_CommissionModified.setText("Commission modified");
-        label_CurrentCommission.setText("Current commission: " + (Double)commission.get("commission")*100 + "%");
+        if(!InvalidFields()) {
+            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
+            JSONArray jsonArray = fileHandler.read();
+            JSONObject commission = (JSONObject) jsonArray.get(0);
+            commission.replace("commission", Double.parseDouble(field_NewCommission.getText()) / 100);
+            fileHandler.write(jsonArray);
+            label_CommissionModified.setTextFill(Paint.valueOf("#1eba27"));
+            label_CommissionModified.setText("Commission modified");
+            label_CurrentCommission.setText("Current commission: " + (Double) commission.get("commission") * 100 + "%");
+        }
+    }
+
+    public boolean InvalidFields() throws IOException, ParseException {
+        double commission;
+        if(field_NewCommission.getText().isEmpty()){
+            label_CommissionModified.setTextFill(Paint.valueOf("#bc1d1d"));
+            label_CommissionModified.setText("Please insert the new commission.");
+            return true;
+        }
+        else try{
+            commission=Double.parseDouble(field_NewCommission.getText());
+            if(commission<0){
+                label_CommissionModified.setTextFill(Paint.valueOf("#bc1d1d"));//red
+                label_CommissionModified.setText("Commission can't be a negative number");
+                return true;
+            }
+            if(commission>=100){
+                label_CommissionModified.setTextFill(Paint.valueOf("#bc1d1d"));//red
+                label_CommissionModified.setText("Commission must be lower than 100%");
+                return true;
+            }
+        }catch (NumberFormatException e){
+            label_CommissionModified.setTextFill(Paint.valueOf("#bc1d1d"));//red
+            label_CommissionModified.setText("Commission can contain only digits");
+            return true;
+        }
+
+        return false;
     }
 
     @FXML
