@@ -36,13 +36,13 @@ public class AddNewCurrency {
     @FXML
     public void addCurrency(ActionEvent event) throws IOException, ParseException {
         if (!InvalidFields()) {
-            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+            FileHandler fileHandler = new FileHandler("Currencies.json");
             JSONArray currencies = fileHandler.read();
             Currency newcurrency = new Currency(field_CurrencyName.getText(), Double.parseDouble(field_CurrencyRate.getText()));
 
             currencies.add(newcurrency.currencyJSON());
             fileHandler.write(currencies);
-            fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+            fileHandler = new FileHandler("Users.json");
             JSONArray users = fileHandler.read();
             for (int i = 0; i < users.size(); i++) {
                 JSONObject user = (JSONObject) users.get(i);

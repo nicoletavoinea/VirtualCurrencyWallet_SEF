@@ -47,7 +47,7 @@ public class User {
         this.username = username;
         this.password = Encryptor.encrypt(password,username);
         this.sums=new ArrayList<>();
-        FileHandler readcurrencies= new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        FileHandler readcurrencies= new FileHandler("Currencies.json");
         JSONArray currencies= readcurrencies.read();
         for(int i=0;i<currencies.size();i++){
             this.sums.add(0.0);
@@ -108,7 +108,7 @@ public class User {
     }
 
     public int usernameExists(String username) throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+        FileHandler fileHandler=new FileHandler("Users.json");
         JSONArray jsonArray=fileHandler.read();
         for(int i=0;i<jsonArray.size();i++) {
             JSONObject object = (JSONObject) jsonArray.get(i);

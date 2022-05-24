@@ -30,7 +30,7 @@ public class ModifyCommission {
     public ModifyCommission(){}
 
     public void initialize() throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
+        FileHandler fileHandler=new FileHandler("Commission.json");
         JSONArray jsonArray=fileHandler.read();
         JSONObject commission= (JSONObject) jsonArray.get(0);
         Double cms=(Double) commission.get("commission");
@@ -39,7 +39,7 @@ public class ModifyCommission {
     @FXML
     public void modifyCommission(ActionEvent event)throws IOException, ParseException {
         if(!InvalidFields()) {
-            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
+            FileHandler fileHandler = new FileHandler("Commission.json");
             JSONArray jsonArray = fileHandler.read();
             JSONObject commission = (JSONObject) jsonArray.get(0);
             commission.replace("commission", Double.parseDouble(field_NewCommission.getText()) / 100);

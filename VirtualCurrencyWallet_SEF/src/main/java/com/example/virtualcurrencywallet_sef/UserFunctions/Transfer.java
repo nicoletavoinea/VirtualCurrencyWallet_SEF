@@ -40,7 +40,7 @@ public class Transfer {
     public Transfer(){}
 
     public void initialize() throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        FileHandler fileHandler=new FileHandler("Currencies.json");
         JSONArray currenciesArray=fileHandler.read();
         ArrayList<String> availableCurrencies=new ArrayList<>();
         Holder holder=Holder.getInstance();
@@ -62,10 +62,10 @@ public class Transfer {
         if(!InvalidFields()) {
             Holder holder = Holder.getInstance();
             JSONObject current = holder.get();
-            FileHandler cms = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Commission.json");
+            FileHandler cms = new FileHandler("Commission.json");
             JSONArray commission = cms.read();
             double c = (double) ((JSONObject) commission.get(0)).get("commission");
-            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+            FileHandler fileHandler = new FileHandler("Users.json");
             JSONArray jsonArray = fileHandler.read();
             int i;      //returns the index of the user;
             User user = new User();
@@ -81,7 +81,7 @@ public class Transfer {
                 label_InsufficientFunds.setText("User not found");
                 return;
             }
-            FileHandler fileHandler2 = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+            FileHandler fileHandler2 = new FileHandler("Currencies.json");
             JSONArray currencies = fileHandler2.read();
             int j;  //retains the index of the currency;
             for (j = 0; j < currencies.size(); j++) {

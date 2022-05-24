@@ -51,7 +51,7 @@ public class Currency {
     }*/
 
     public int alreadyExists(String name) throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        FileHandler fileHandler=new FileHandler("Currencies.json");
         JSONArray jsonArray=fileHandler.read();
         for(int i=0;i<jsonArray.size();i++){
             JSONObject object=(JSONObject) jsonArray.get(i);
@@ -62,7 +62,7 @@ public class Currency {
     }
 
     public static int getPosition(String name) throws IOException, ParseException {
-        FileHandler fileHandler=new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Currencies.json");
+        FileHandler fileHandler=new FileHandler("Currencies.json");
         JSONArray jsonArray=fileHandler.read();
         JSONObject current;
         for(int i=0;i<jsonArray.size();i++) {

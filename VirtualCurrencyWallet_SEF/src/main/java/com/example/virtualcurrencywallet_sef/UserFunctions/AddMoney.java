@@ -44,7 +44,7 @@ public class AddMoney {
     private void add(ActionEvent event) throws IOException, ParseException {
         if(!InvalidFields()) {
             User user = new User();
-            FileHandler fileHandler = new FileHandler("src/main/java/com/example/virtualcurrencywallet_sef/Database/Users.json");
+            FileHandler fileHandler = new FileHandler("Users.json");
             JSONArray jsonArray = fileHandler.read();
 
             Holder holder = Holder.getInstance();
